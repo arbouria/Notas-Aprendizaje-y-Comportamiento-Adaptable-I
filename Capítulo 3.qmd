@@ -1,10 +1,8 @@
 ---
 title: "Asignación de Crédito"
+author: "Arturo Bouzas"
 format: html
 ---
-
-Arturo Bouzas
-
 Al interactuar con su entorno, un agente se encuentra con un constante flujo de estímulos y respuestas que se despliegan en el tiempo. Algunos de los sucesos que encuentra son biológicamente significativos, importantes para su éxito reproductivo. El encuentro inesperado con un suceso biológicamente importante echa a andar dos mecanismos: Uno que controla la respuesta inmediata al SBI y un segundo mecanismo que permite predecir su futura ocurrencia. 
 Considere un organismo que encuentra un inesperado pedazo de comida o un depredador. El primer mecanismo le permite al organismo manipular y consumir la comida, o huir y escapar del depredador. El segundo mecanismo, el que posibilita predecir y controlar un SBI, implica la existencia de una estructura causal en el entorno del organismo: esto es, que existen sucesos que predicen o respuestas que producen la comida o evitan al depredador. La tarea para el agente es seleccionar, dentro de un número gigantesco de posibilidades, a cuál suceso o respuesta atribuirle la ocurrencia de un SBI. A este problema de adaptación se le conoce como el de la *asignación de crédito*.
 

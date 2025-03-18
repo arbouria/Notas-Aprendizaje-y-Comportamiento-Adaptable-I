@@ -1,12 +1,8 @@
 ---
 title: "Evolución de la Adaptabilidad del Comportamiento: El papel de las restricciones"
+author: "Arturo Bouzas"
 format: html
 ---
-
-
-
-## Arturo Bouzas
-
 Si el término “adaptación” se utiliza para designar aquellos rasgos que son resultado del proceso de selección natural, el concepto de “adaptabilidad” del comportamiento se define como la medida en que un comportamiento contribuye al éxito reproductivo en el presente. El primer término hace referencia al origen de un comportamiento, mientras que el segundo hace referencia a la función que cumple un comportamiento actualmente. En particular, la adaptabilidad de un comportamiento se modifica naturalmente en función de cómo este aporta a dos características clave de la vida de los organismos: el metabolismo y la reproducción (Godfrey-Smith, 2017). En cuanto al metabolismo, los sistemas biológicos gastan y agotan la energía almacenada y requieren de un constante abastecimiento de ella. Los procesos evolutivos van moldeando distintas formas exitosas de reabastecimiento a través del éxito reproductivo diferencial del organismo.
 
 El reabastecimiento de energía a través de la acción del organismo está limitado por dos grupos de restricciones, uno del organismo y otro del entorno. La primera condición limitante es que el comportamiento toma un tiempo para llevarse a cabo. Dado que el tiempo disponible es ﬁníto, la suma de todos los comportamientos llevados a cabo es igual al total del tiempo disponible. 
@@ -34,7 +30,7 @@ En resumen,
 2. En entornos variables e inciertos, selección natural resulta en el
 surgimiento de mecanismos que permiten “comportamiento adaptable” y que llamaremos *aprendizaje* (¡ojo! este concepto es distinto al de “comportamiento adaptado”).
 
-3. Selección natural opera en estructuras, genes y las expresiones de genes (como un sistema nervioso, por ejemplo). Estos son los elementos que permiten y subyacen a los mecanismos del comportamiento adaptable.
+1. Selección natural opera en estructuras, genes y las expresiones de genes (como un sistema nervioso, por ejemplo). Estos son los elementos que permiten y subyacen a los mecanismos del comportamiento adaptable.
 
 En términos evolutivos, la tarea de los agentes es *reducir la incertidumbre* acerca de la ocurrencia de los SBI, *predecir* efectivamente su ocurrencia y llevar a cabo las *acciones* necesarias para interactuar óptimamente con estos. Así, un primer paso para el estudio del comportamiento inteligente es tener una especificación detallada de las propiedades estadísticas de los entornos de los organismos. Cuatro propiedades estadísticas de los sucesos biológicamente importantes han dominado el estudio del comportamiento adaptable: el tiempo y el lugar de ocurrencia, la relación (correlación, covarianza) con otras características del entorno y la relación con el comportamiento de un organismo. El supuesto más importante que haremos es que si las consecuencias relevantes en el entorno se distribuyen en ciertos tiempos, lugares y están asociadas con ciertas estímulos y comportamientos, un organismo que pueda detectar estas propiedades estadísticas y ajustar su conducta a ellas, podrá asignar más óptimamente su distribución de comportamiento a las metas en competencia. 
 

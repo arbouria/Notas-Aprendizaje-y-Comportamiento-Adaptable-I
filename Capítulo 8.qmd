@@ -1,10 +1,8 @@
 ---
 title: "Acción Como Elección"
+author: "Arturo Bouzas" 
 format: html
 ---
-
-## Arturo Bouzas
-
 Todas las variantes de la ley del efecto nos dicen que las respuestas que son seguidas por un refuerzo incrementan en frecuencia. Si esta fuera la única información que nos proporciona este concepto, difícilmente le asignaríamos el estatus de una una ley y su utilidad para entender el comportamiento sería muy limitada. En un escenario aplicado, para la madre que quiere modificar la conducta de un hijo, la sola recomendación de reforzar la conducta que desea incrementar no resulta totalmente satisfactoria. La madre quisiera saber si es necesario reforzar cada instancia de la respuesta o solo algunas de ellas, quisiera saber si el refuerzo 20 tiene el mismo impacto que el refuerzo 10 y, finalmente, quisiera saber si el seguimiento de distintas reglas para la entrega del refuerzo marca una diferencia. 
  
 En las notas sobre programas de refuerzo, le dimos ya una respuesta a la última pregunta: presentamos el comportamiento característico asociado con distintas reglas de entrega de refuerzo y, en particular, resaltamos que en programas de razón variable los organismos responden a una tasa más alta que en los programas de intervalo variable. En el escenario aplicado, la madre preguntaría si para conseguir que su hijo emita la respuesta deseada a cierta tasa, el valor de la razón debe ser de 5, 10, 50, 200 o 500 respuestas por refuerzo. La madre también quisiera saber qué diferencia hace para el comportamiento observado que la oportunidad de obtener un refuerzo sea de 1 en cada 5, 10, 20, 100, 200 o 500 minutos. 
@@ -19,8 +17,7 @@ Un primer paso para especificar la función aludida es encontrar la relación em
 
 Catania y Reynolds (1968) publicaron el primer estudio sistemático en el que se estudió la relación, “en equilibrio”, entre tasas de respuesta y tasas de refuerzo que resultan de variar los valores del programa de intervalo. Al hablar de “equilibrio”, se hace referencia a un protocolo en el que se entrena al animal con un valor de un programa IV y se ejecutan el número de sesiones necesarias para alcanzar un comportamiento estable; finalmente, los datos que se analizan son los correspondientes a los últimos días de exposición. El procedimiento se repite para cada uno de los programas IV estudiados. De esta manera, se determina la relación entre la tasa de refuerzo de distintos intervalos (valor de entrada de la función) y la tasa de respuesta de los organismos (valor de salida de la función).
 
-![](media/17204786953127/17204838132577.jpg)
-
+imagen
   
 En la siguiente figura se muestran los resultados del estudio de Catania y Reynolds. Puede verse que hay una relación de ganancias decrecientes entre la tasa de respuesta y la tasa de refuerzo que produce. La función crece rápidamente conforme incrementa la tasa de refuerzo (es decir, conforme aumenta el número de refuerzos por unidad de tiempo), hasta alcanzar un punto después del cual, incrementos subsecuentes en la tasa de refuerzo tienen un efecto cada vez menor sobre la tasa de respuesta del organismo. Esta función se encontró posteriormente en docenas de estudios (de Villiers y Herrnstein).
 
@@ -42,8 +39,7 @@ Y usando la función *f*, derivar la relación entre las tasas relativas de resp
 
 La siguiente figura muestra los resultados de un experimento que compara los resultados de las dos formas de estructurar los programas concurrentes:
 
- ![](media/17204786953127/17204900828565.jpg)
-
+imagen
 
 La figura del panel izquierdo muestra la tasa de respuesta de las dos opciones bajo la condición donde la tasa de refuerzo total es constante. La figura del panel derecho muestra la tasa de respuesta de las dos opciones bajo la condición en la cual la tasa de refuerzo para una respuesta (símbolos negros) es constante, mientras que la tasa de refuerzo para la otra respuesta es variable (círculos abiertos). Podemos ver que en la primera condición, la tasa de respuesta está linealmente relacionada a su tasa de refuerzo. A mayor tasa de refuerzo, mayor tasa de respuesta. Mientras tanto, en la segunda condición, la tasa de respuesta a la opción con refuerzo fijo disminuye en función del aumento en el refuerzo obtenido en la otra opción de respuesta.
 
@@ -74,7 +70,6 @@ $$R_1 = \frac {kr_1} {(r_1 + r_2)}$$
 La función nos dice que la tasa de una respuesta es una función de la tasa relativa de refuerzo que recibe esta respuesta. Como puede verse en el simulador, si la tasa de refuerzo $r_2$ para la otra opción es constante, la forma de la función de la tasa de respuesta $R_1$ es de ganancias decrecientes, igual a los datos empíricos reportados en la figura x. Por otra parte, si $r_1$ es constante, conforme incrementa el valor de $r_2$, la tasa de de respuesta $R_1$ decrementa, reproduciendo el patrón de contraste conductual.
 
 Esta función es consistente con el resultado de la ley de igualación. Sustituyendo y cancelando el parámetro *k* y los denominadores, 
-
 \begin{equation}
 \frac{R_1}{R_1 + P_2} = \frac{\frac{kr_1}{r_1 + r_2}}{\frac{kr_1}{r_1 + r_2} + \frac{kr_2}{r_1 + r_2}} = \frac{kr_1}{kr_1 + kr_2} = \frac{r_1}{r_1 + r_2}
 \end{equation}

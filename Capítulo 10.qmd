@@ -1,10 +1,8 @@
 ---
-title: "Comportamiento de Elección: Maximización Local "
+title: "Comportamiento de Elección: Maximización Local"
+author: "Arturo Bouzas"
 format: html
 ---
-
-## Arturo Bouzas
-
 En el capítulo anterior, vimos que estudiando una medida agregada de respuestas y refuerzos, en equilibrio, la tasa relativa de respuestas tiende a igualar a la tasa de refuerzo que produce cada opción. Contemplamos dos posibles explicaciones computacionales para este fenómeno: la igualación de la probabilidad de refuerzo para las opciones de respuesta (igualación de la rentabilidad de las respuestas) y la maximización de la tasa global de refuerzo. 
 
 Una alternativa a estos modelos molares son los modelos de *maximización local*, los que asumen que igualación es el resultado de que en cada oportunidad de respuesta, los organismos eligen aquella respuesta asociada con el valor más alto de alguna variable local. Vamos a revisar tres miembros de esta familia de modelos, que se distinguen entre ellos por la variable local que cada uno maximiza:
@@ -27,13 +25,13 @@ En experimentos con programas de ensayos discretos, se mide la probabilidad de c
 
 En el experimento más citado con este procedimiento, Nevin () no encontró evidencia en favor del modelo de maximización instantánea. Ver Figuras. 
 
-![](media/17201205364798/17201396263913.jpg)
+imagen
 
 Obsérvese en la figura del panel izquierdo que la probabilidad de refuerzo de la Opción Roja aumenta con la acumulación de elecciones de la Opción Verde por parte del organismo. Al mismo tiempo, en la figura del panel derecho, nótese que la probabilidad de cambiar a la Opción Roja no aumenta con la acumulación de elecciones de la Opción Verde por parte del organismo. Nota: la probabilidad de cambiar de opción se calculó con base al número de oportunidades para cambiar de opción en cada secuencia (run length). Así, estos resultados rompen con el patron de elecciones esperado según el modelo de maximización instantánea. 
 
 En un análisis posterior de su experimento original  y de los datos de un experimento de Silberberg (), Nevin () encontró que la perseverancia en las opciones de respuesta (independientemente de su probabilidad de refuerzo) era el patrón más frecuentemente observado en ambos experimentos. Los animales tendían a quedarse en la tecla a la que habían respondido anteriormente y no a cambiar como una función del número de respuestas a esa tecla Ver fig.
 
-![](media/17201205364798/17201399029035.jpg)
+imagen
 
 #### 2. Programas de refuerzo concurrente RV - IV de ensayos discretos
 
@@ -41,8 +39,7 @@ Un protocolo adicional para evaluar el modelo de maximización local es un progr
 
 La siguiente figura x presenta los resultados obtenidos por Williams () usando el protocolo anterior. En primer lugar, Williams encontró que los animales igualaban la frecuencia relativa de respuestas a la frecuencia relativa de refuerzos, pero de manera aún más importante para estas notas: no encontró evidencia de que la respuesta fuese controlada por la probabilidad instantánea de refuerzo. El panel izquierdo de la figura muestra la probabilidad de refuerzo como una función del número de ensayos desde la última respuesta a la opción IV. Puede verse que la probabilidad de refuerzo para un cambio a la tecla IV es creciente; consecuentemente, la probabilidad de una respuesta a la tecla IV también debería incrementar como una función del número de ensayos desde la última respuesta a la opción IV. Sin embargo, el panel derecho de la figura muestra que la probabilidad real u observada de una respuesta al IV es constante o decreciente.
 
-![](media/17201205364798/17201421458762.jpg)
-
+imagen
 
 ### Conclusiones acerca del modelo de maximización Instantánea
 

@@ -1,10 +1,8 @@
 ---
 title: "Asignación de Crédito para Respuestas"
+author: "Arturo Bouzas" 
 format: html
 ---
-
-### Arturo Bouzas
-
 El acceso a sucesos biológicamente importantes es fundamental para la supervivencia y reproducción de los organismos.  Aquellos organismos que puedan predecir confiablemente la ocurrencia de los SBI tienen una ventaja comparativa en términos de su éxito reproductivo. Aprender que un cielo encapotado predice una fuerte lluvia le permite a un individuo anticiparse y prepararse correctamente para ella. De igual forma, escuchar un rugido le permite a una presa prepararse para el caso de un posible ataque. Sin embargo, el individuo no tiene control sobre lo nublado del cielo, ni sobre la presencia del depredador dado el rugido. Puede predecir cuándo lloverá, pero no puede alterar el que llueva; puede predecir que detrás del rugido esté un depredador, pero no puede modificar su presencia. 
 
 Uno de los saltos importantes en la historia evolutiva fue la emergencia de mecanismos biológicos que, a través de la acción y la interacción con el entorno, permiten a los organismos *controlar* la ocurrencia de sucesos biológicamente importantes. Estos mecanismos se encuentran estrechamente asociados a un componente específico de la estructura causal de los entornos: las relaciones que describen cuáles acciones de un organismo son exitosas para obtener mayores opciones de acceso a SBI. Un ejemplo en nuestra especie de estas **”elaciones que describen las acciones exitosas para acceder a mayores opciones de SBI”** son los contratos laborales: en estos se contienen las reglas que especifican las acciones a seguir para acceder a un monto de dinero (lo que equivale a mayores opciones de SBI para nuestra especie). Otros ejemplos son: las reglas que especifican qué acciones llevar a cabo si se desea tomar un transporte público; las reglas que definen las acciones requeridas para iniciar una relación amorosa; las reglas que especifican a su mascota qué acciones le otorgan una comida especial; las reglas que especifican a cada especie las acciones que facilitan su acceso a alimentos, así como los actos que les permiten escapar y evitar a sus depredadores. 

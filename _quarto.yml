@@ -1,10 +1,15 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Notas de Aprendizaje y Comportamiento Adaptable"
   author: "Arturo Bouzas"
+  repo-url: https://github.com/arbouria/Notas-Aprendizaje-y-Comportamiento-Adaptable-I
   date: "3/15/2025"
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
 
   search:
     type: textbox
@@ -16,43 +21,18 @@ book:
 
   sidebar:
     logo: cover.png
-    title: "Notas de Aprendizaje y Comportamiento Adaptable"
-    pinned: true
-    align: center
-    background: dark
-
-    style: "docked"
-    collapse-level: 1
-
-    format:
-      html:
-        page-layout: full
-
-        fig-format: png
-        fig-responsive: true
-
-        linestretch: 1.75
-        fontsize: "22px"
-
-        link-external-icon: false
-        link-external-newwindow: true
-        #link-external-filter: '/^(?:https:|http:)\/\/christian\-badillo\.quarto\.pub\/aprendizaje.+'
-
-        smooth-scroll: true
-
-        number-sections: false
-
-        toc: true
-        toc-title: "Contenido"
-        toc-depth: 3
-
-        theme: 
-          light: materia
-          dark: superhero
-    
-          css: styles.css
-
-
+    pinned: false
+    align: left
+    style: floating
+    collapse-level: 2
+  
+  page-footer:
+      border: true 
+      center: "Libro Apoyado por los Proyectos [PAPIME](https://dgapa.unam.mx/index.php/fortalecimiento-a-la-docencia/papime) PE309624 y PE302221"
+      left:
+        - text: "Acerca"
+          href: index.qmd
+      right: ''
 
   chapters:
       - index.qmd
@@ -70,4 +50,50 @@ book:
       - references.qmd
       
       
-      
+format:
+    html:
+      lang: es
+      page-layout: full
+
+      fig-format: png
+      fig-responsive: true
+
+      linestretch: 1.75
+      fontsize: "18px"
+
+      link-external-icon: false
+      link-external-newwindow: true
+      #link-external-filter: '/^(?:https:|http:)\/\/christian\-badillo\.quarto\.pub\/aprendizaje.+'
+
+      smooth-scroll: true
+
+      number-sections: false
+
+      toc: true
+      toc-title: "Contenido"
+      toc-depth: 3
+
+      theme: 
+          light: [cerulean, theme-light.scss]
+          dark: [cerulean, theme-dark.scss]
+
+    pdf: 
+      title: "Notas de Aprendizaje y Comportamiento Adaptable"
+      documentclass: scrreprt  
+      papersize: a4
+      geometry:
+        - paperwidth=8.0000000000000in
+        - paperheight=10.000000000000in
+        - left=1.25in
+        - textwidth= 5.25in
+        - top=1.00in
+        - textheight=8.25in
+      toc: true
+      colorlinks: true
+      fig-dpi: 300
+      fig-width: 6
+      fig-height: 6
+      fig-align: left
+      fig-pos: H'
+      keep-tex: true
+

@@ -1,12 +1,9 @@
 ---
 title: "Principios de la Selección Natural"
+author: "Arturo Bouzas"
 format: html
 ---
-
-
-## Arturo Bouzas
-
-## “Nothing in Biology (Psychology) Makes Sense Except in the Light of Evolution”  Dobzhansky.
+> “Nothing in Biology (Psychology) Makes Sense Except in the Light of Evolution”.  Dobzhansky.
 
 Como vimos en una nota anterior, la influencia de Darwin y el pensamiento seleccionista sobre la Psicología fue enorme. Hoy en día, para entender el comportamiento adaptado y adaptable, resulta indispensable conocer los principios más generales de la teoría de la selección natural. El propósito de esta nota es presentar estos principios. Para un tratamiento extenso del tema, revise las recomendaciones al final de la nota.
 

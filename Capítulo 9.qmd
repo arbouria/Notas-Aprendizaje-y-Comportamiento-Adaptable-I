@@ -1,10 +1,8 @@
 ---
 title: "Elección Recurrente: Igualación"
+author: "Arturo Bouzas"
 format: html
 ---
-
-## Arturo Bouzas
-
 Consideren las siguientes situaciones: a un agente se le presentan dos bolsas, y se le **informa** que una contiene $100,000 y la otra $100 a la vez que se le pide que opte por una de ellas; en un segundo escenario, al agente se le lleva a un restaurante que no volverá a visitar y se le pide elegir entre uno u otro platillo. En ambos ejemplos, la elección puede hacerse exclusivamente a partir del valor de las opciones en el momento de la elección, y anteriormente hemos visto que el agente selecciona la opción con mayor valor en el momento de decisión. Estas situaciones de elección son instancias de sistemas abiertos sin retroalimentación y siguiendo a Gallistel (fecha), les llamamos protocolos de *optar*.  En las últimas décadas, la mayoría de la investigación psicológica con participantes humanos ha utilizado este tipo de protocolo. 
 
 Consideren ahora un experimento similar: en lugar de informar al agente acerca del contenido de las bolsas en un inicio, a este se le presentan las opciones como bolsas cerradas, y a través de múltiples iteraciones, el agente tiene que explorar y **aprender** acerca de los montos de dinero de las distintas bolsas o de la calidad de las distintas opciones ofrecidas por el restaurante. La presentación recurrente de las oportunidades de elección crea nuevos problemas de adaptación para el agente. Como vimos en las notas anteriores, el agente debe resolver el dilema de exploración - explotación y debe determinar si las consecuencias de las opciones cambian como una función de las elecciones y el paso del tiempo, o si estas son fijas e independientes de las elecciones y del tiempo. En un ejemplo no ya de una elección entre varios platillos de un restaurante sino de una elección entre acudir a uno de varios restaurantes, el agente debe visitar los distintos locales un buen número de veces antes de tomar la decisión de pasar a explotar uno. Sin embargo, aún tras haber estimado la opción con mayor valor y haber comenzado a explotar una opción elegida, el agente debe mantener cierta flexibilidad para modificar su elección, en aras de poder determinar si la calidad de los restaurantes varía aleatoriamente con el paso del tiempo (debido a factores como los cambios de cocinero, por ejemplo). En estos casos, la regla de elegir la opción que instantáneamente tiene más valor no es la que a largo plazo proporciona la mayor cantidad de refuerzos. En los experimentos con estos protocolos observamos una regla de respuesta probabilística.
@@ -20,8 +18,7 @@ La forma más sencilla de estudiar experimentalmente protocolos de elección rec
 $$\frac{R_1} {(R_1 +R_2)}$$
 
 
-![](media/17195442061930/17198803019080.jpg)
-
+imagen
 
 
 En los estudios que reportamos, el animal es expuesto a un par de programas de refuerzo dentro de sesiones diarias hasta que la distribución de respuestas a las distintas opciones disponibles se vuelve estable y deja de cambiar día con día. Esto toma entre 30 y 45 días. Esta rutina se repite para todos los pares de programas que se están estudiando. De cada par, se usan para el análisis los últimos cinco días en los que las elecciones son estables.
@@ -31,8 +28,7 @@ En los estudios que reportamos, el animal es expuesto a un par de programas de r
 
 En 1961, Richard Herrnstein (ver foto)
 
-![](media/17195442061930/17198802610068.jpg)
-
+imagen
 
 reportó los resultados del primer estudio con programas concurrentes, en el que la respuesta de picar una de dos teclas era reforzada de acuerdo a un programa de intervalo variable. Recuerden que en estos programas el refuerzo se presenta tras la primera respuesta después de que haya transcurrido un tiempo aleatorio desde el último refuerzo. Un detalle muy importante que debe tenerse presente bajo este tipo de programa es que una vez que un refuerzo está disponible, la oportunidad de obtenerlo se retiene hasta que el animal responde a esa opción. 
 
@@ -42,9 +38,7 @@ $$\frac {R_1} {(R_1 + R_2)} = \frac {r_1} {(r_1 + r_2)}$$
 
 El resultado es muy robusto y se ha reportado en un sinnúmero de especies. A esta relación entre tasas relativas de respuesta y refuerzo se le conoce como la *ley de igualación* y en la última década del siglo pasado fue la ley más citada en la literatura psicológica. En la siguiente figura pueden verse los resultados de tres palomas: cada punto representa los datos de los últimos cinco días para cada par de valores de los programas de intervalo variable. La proporción de respuestas (tasas relativas) va de cero a uno. (Figura). 
 
-![](media/17195442061930/17198802219877.jpg)
-
-
+imagen
 
 Igualación sería un resultado trivial, si por cada refuerzo hubiese solo una respuesta, sin embargo, el patrón de igualación en los refuerzos también se puede obtener con un rango muy amplio de tasas relativas de respuesta que van más allá de la tasa específica del patrón de igualación.
 
@@ -59,14 +53,13 @@ Introducir el ejemplo de “ver Salir a alguien con una cantidad de frijoles de 
 
 1.  *Sesgos*. Si en una visita al supermercado les ofrecen probar, sin ningún costo, frijoles negros o bayos, algunos de Uds. preferirán la prueba de los frijoles negros. Dada esa preferencia, si compran frijoles y ambos tienen el mismo precio, comprarán los frijoles negros. Sin embargo, qué frijoles deciden comprar depende de la diferencia en su precio modelada por su preferencia. Cuando los reforzadores para las dos respuestas son diferentes, por ejemplo, cuando una de las dos variedades de frijoles negros o bayos les brinda mayor satisfacción debido a su sabor particular, es posible que exista una preferencia por uno de ellos: esta preferencia tendrá un impacto sobre cada combinación de razones de refuerzo. Cuando esta razón es igual pero todavía se presentan diferencias en la tasa relativa de refuerzo, esta diferencia es un indicador del sesgo del organismo en favor de uno de los reforzadores. Los resultados se verían como los de la figura x: en ella, la tasa relativa de respuesta se aleja de 0.5, aún cuando la tasa relativa de refuerzo es igual para las dos opciones. 
 
-![](media/17195442061930/17200279114135.jpg)
+imagen
 
 2. *Sensibilidad*. En una misma visita al supermercado, un mismo producto que desean comprar es ofrecido por dos marcas distintas a precios diferentes: uno cuesta $11.00 y el otro $5.50. La diferencia en precio es de 2 a 1, sin embargo, los valores numéricos son difíciles de discriminar y para algunos de Uds. esta diferencia será percibida como de 3 a 1, mientras que para otros, la diferencia se percibirá como de 1.5 a 1. Sensibilidad es una segunda desviación de igualación, que ocurre cuando los organismos no son linealmente sensibles a la diferencia entre las tasas de refuerzo. Esto puede deberse a distinciones en la importancia de las diferencias en el valor de las opciones o a la dificultad para discriminar entre ellas. La figura x muestra como se vería la relación entre tasas relativas de respuesta y de refuerzo bajo distintos valores de sensibilidad. Cuando la tasa relativa de respuesta no es muy sensible a las tasas de refuerzo para cada respuesta, observamos valores cercanos a la indiferencia (panel de la izquierda en la figura) y a este resultado se le conoce como sub igualación. Cuando la tasa relativa de respuestas sobrevalora las diferencias en las tasas de respuesta, observamos que se prefiere mayoritariamente la mejor opción (panel derecho en la figura) y a este fenómeno se le conoce como sobre-igualación. 
 
 En resumen, el sesgo hace referencia a la preferencia del organismo por una de las opciones, la cual tiene un efecto multiplicativo al de la tasa de ocurrencia de los reforzadores para determinar las tasas de respuesta. El otro factor de desviación respecto a igualación es la sensibilidad del agente ante las diferencias en las tasas de ocurrencia de los refuerzos de las distintas opciones. Vamos a asumir que el sesgo y la sensibilidad varían independientemente el uno del otro.
 
-![](media/17195442061930/17200344071388.jpg)
-
+imagen
  
 ### Ley generalizada de Igualación
 
@@ -87,7 +80,7 @@ $$\log \frac{B_1}{B_2} = \beta \log\frac{r_1}{r_2} + \log \alpha$$
 
 En la figura x podemos ver su comportamiento y en el simulador uds. pueden jugar con diferentes valores de los parámetros de sesgo y sensibilidad. Podemos ver que bajo la transformación logarítmica, la ecuación de potencia se convierte en una familia de líneas rectas en las que $\beta$ es la pendiente de la función y $\alpha$ es su intercepto. Cuando la sensibilidad es igual a uno y no hay sesgo (es decir, $\alpha$  = 0), la ecuación es la ley de igualación y la línea recta parte del origen. Los valores de $\alpha$ positivos o negativos generan líneas rectas paralelas a la recta de igualación. Los valores del parámetro de sensibilidad $\beta$ menores a uno representan sub-igualación y los valores mayores a uno representan sobre-igualación. En el primer caso, la importancia de la diferencia entre los refuerzos se empequeñece psicológicamente y en el segundo caso la misma diferencia se agranda.
 
-![](media/17195442061930/17200476681102.jpg)
+imagen
 
 En el marco de referencia de los modelos de elección basados en el valor de las consecuencias, la ecuación generalizada de igualación resulta ser una instancia de una regla de respuesta en la que la probabilidad de cada respuesta es una función de la diferencia entre reforzadores:
 
@@ -98,8 +91,6 @@ En nuestro caso, el parámetro $\beta$ es $\lambda$ y la función $\F$ es una fu
 $$\log \frac{R_1}{R_2} = \beta (\log{r_1} - log{r_2}) + \log \alpha$$
 
 La ecuación generalizada de igualación puede emplearse para distintos usos: ya sea evaluar la preferencia entre diferentes refuerzos (representada por el valor del parámetro alfa); investigar bajo qué condiciones se obtiene igualación perfecta, es decir, cuando  $\alfa = 1$ y $\beta = 1$; o finalmente, establecer la forma en la que las diferencias en refuerzo son transformadas en distintas distribuciones del comportamiento. El parámetro $\beta$ puede interpretarse en al menos dos formas, primero como una propiedad del sistema: de la misma forma que el exponente para las funciones psicofísicas varía dependiendo de la dimensión sensorial, la sensibilidad beta podría variar dependiendo del tipo de refuerzo. En segundo lugar, beta también puede interpretarse como el resultado de un conjunto de manipulaciones experimentales y restricciones perceptuales del sistema que imponen límites en la discriminabilidad de las diferencias de refuerzos. Para dar un ejemplo de estas dos interpretaciones plausibles ante un único fenómeno de discriminación: consideremos la diferencia en el refuerzo que generan dos sabores placenteros distintos, esta diferencia es mucho más fácil de distinguir que aquella los refuerzos que otorgan dos sonidos melódicos distintos. Esta diferencia en la facilidad o dificultad para discriminar entre dos estímulos podría deberse a una propiedad intrínseca de los sabores como fenómeno respecto a los sonidos (interpretación 1), aunque también podría deberse a que nuestro sistema sensorial (el sistema sensorial humano) tiene una mayor facilidad para distinguir refuerzos por vía de la modalidad gustativa que por vía de la modalidad auditiva (interpretación 2). La segunda interpretación sugiere que esta dificultad discriminativa podría no presentarse en otras especies con sistemas sensoriales distintos, por ejemplo, en los murciélagos, que poseen sistemas auditivos más agudos que nosotros.
-
-
 
 
 ### Igualación como un Mecanismo Adaptable

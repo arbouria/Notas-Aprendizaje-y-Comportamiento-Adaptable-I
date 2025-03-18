@@ -1,10 +1,8 @@
 ---
 title: El Modelo de Rescorla y Wagner
+author: Arturo Bouzas
 format: html
 ---
-
-## Arturo Bouzas
-
 En el capítulo anterior, vimos que el modelo de aprendizaje por refuerzo, conocido también como modelo de *aprendizaje de error de predicción* captura razonablemente bien la adquisición de valor predictivo cuando un estímulo o respuesta van seguidos de un refuerzo. En este capítulo veremos que este modelo *no* puede dar cuenta de los resultados presentados en el capítulo sobre asignación de crédito, los cuales ilustran la importancia de una serie de correlaciones: aquellas que sostiene el EC o la respuesta con la aparición del refuerzo; aquellas que sostiene el EC con otros estímulos presentes (elementos del contexto); y aquellas que existen previamente entre otros estímulos distintos y el refuerzo actual. Originalmente, estos últimos resultados indujeron interpretaciones que enfatizaban que la asignación de crédito a un estímulo o respuesta dependía de que estos fueran seguidos de un refuerzo que era *sorpresivo, inesperado,  informativo, o que atraía la atención. * En 1972, Rescorla y Wagner presentaron un modelo que daba cuenta de los resultados que muestran que la mera contigüidad no es un factor necesario ni suficiente para la asignación de crédito. El modelo es una extensión del principio de la reducción de error, que captura la intuición acerca del papel de la sorpresa como un modelo matemático: todo ello sin hacer referencia a procesos atencionales que se suponían difíciles de evaluar con sujetos no humanos. Este modelo sigue siendo hasta la fecha el motor de la investigación en aprendizaje. 
 
 ### Modelo de Rescorla y Wagner

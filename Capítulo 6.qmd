@@ -1,10 +1,8 @@
 ---
 title: "Modelo de Aprendizaje por Refuerzo"
+author: "Arturo Bouzas" 
 format: html
 ---
-
-## Arturo Bouzas
-
 Como un resultado de la selección natural, los agentes biológicos son sistemas con mecanismos que les permiten detectar, predecir y controlar los sucesos biológicamente importantes (SBI). Recordemos que los SBI son sucesos con valor hedónico, también conocidos como refuerzos, los cuales incrementan el éxito reproductivo diferencial de los organismos. Para ejecutar estas funciones de detección, predicción y control de SBI los organismos necesitan hacer contacto con la estructura causal del entorno: estructura a la cual designamos bajo el término de *propiedades estadísticas del entorno*. 
 
 Una parte de la estructura estadística de los SBI consiste de estímulos que se despliegan en el tiempo y en el espacio, los cuales en algunas ocasiones aparecen solos, mientras que en otras instancias aparecen seguidos (contiguos) de un refuerzo. Hay tiempos sin nubes y otros con nubes, estos últimos pueden ser seguidos o no de lluvia. La tarea para el organismo es determinar si existe una relación causal entre las nubes y la lluvia. Una segunda parte de la estructura estadística del entorno consiste del hecho de que, con relación al despliegue de respuestas de los organismos en el tiempo y en el espacio, algunas ocasiones estas respuestas van seguidas de un refuerzo y en otras ocasiones no. Hay veces en las que ustedes le dicen “hola” a una persona y otras en las que no. Después del “hola” ustedes pueden recibir, o no, otro “hola” de regreso. Los protocolos de condicionamiento clásico e instrumental definen, como una primera aproximación, las estructuras causales más simples que se estudiaron en buena parte del siglo XX. En los dos capítulos anteriores, resumimos la literatura empírica acerca del papel de la contigüidad en la asignación de crédito a estímulos y respuestas que permiten *predecir y controlar* los refuerzos. Presentamos evidencia que muestra que aunque la contigüidad es importante, esta no es ni necesaria, ni suficiente para la asignación de crédito.  
