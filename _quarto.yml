@@ -1,0 +1,73 @@
+project:
+  type: book
+
+book:
+  title: "Notas de Aprendizaje y Comportamiento Adaptable"
+  author: "Arturo Bouzas"
+  date: "3/15/2025"
+
+  search:
+    type: textbox
+    location: sidebar
+    copy-button: true
+    limit: 10
+
+  page-navigation: true
+
+  sidebar:
+    logo: cover.png
+    title: "Notas de Aprendizaje y Comportamiento Adaptable"
+    pinned: true
+    align: center
+    background: dark
+
+    style: "docked"
+    collapse-level: 1
+
+    format:
+      html:
+        page-layout: full
+
+        fig-format: png
+        fig-responsive: true
+
+        linestretch: 1.75
+        fontsize: "22px"
+
+        link-external-icon: false
+        link-external-newwindow: true
+        #link-external-filter: '/^(?:https:|http:)\/\/christian\-badillo\.quarto\.pub\/aprendizaje.+'
+
+        smooth-scroll: true
+
+        number-sections: false
+
+        toc: true
+        toc-title: "Contenido"
+        toc-depth: 3
+
+        theme: 
+          light: materia
+          dark: superhero
+    
+          css: styles.css
+
+
+
+  chapters:
+      - index.qmd
+      - intro.qmd
+      - Capítulo 1.qmd
+      - Capítulo 2.qmd 
+      - Capítulo 3.qmd
+      - Capítulo 4.qmd
+      - Capítulo 5.qmd
+      - Capítulo 6.qmd
+      - Capítulo 7.qmd
+      - Capítulo 8.qmd
+      - Capítulo 9.qmd
+      - Capítulo 10.qmd
+      - references.qmd
+      
+      
+      

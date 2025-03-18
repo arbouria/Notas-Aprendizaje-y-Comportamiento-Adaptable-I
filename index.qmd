@@ -1,0 +1,13 @@
+---
+title: "Notas de Aprendizaje y Comportamiento Adaptable"
+format: html
+page-layout: full
+---
+
+# Prefacio {.unnumbered}
+
+Este es un libro de notas para los cursos de "Aprendizaje y Comportamiento Adpatable", que se imparten el la facultad de Psicología de la Universidad Nacional Autónoma de México
+
+El proyecto de esta página web fue financiado por el proyecto PAPIME PE302221
+
+Arturo Bouzas.

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Modelo de Aprendizaje por Refuerzo – Notas de Aprendizaje y Comportamiento Adaptable</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Capítulo 7.html" rel="next">
+<link href="./Capítulo 5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c849e05bb361e5087ea6a5234b1cf041.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 10,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Capítulo 6.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modelo de Aprendizaje por Refuerzo</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./cover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notas de Aprendizaje y Comportamiento Adaptable</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Principios de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Evolución de la Adaptabilidad del Comportamiento: El papel de las restricciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Asignación de Crédito para Respuestas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Correlación, Tiempo y Contingencia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modelo de Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Acción Como Elección</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Elección Recurrente: Igualación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Comportamiento de Elección: Maximización Local</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#arturo-bouzas" id="toc-arturo-bouzas" class="nav-link active" data-scroll-target="#arturo-bouzas"><span class="header-section-number">8.1</span> Arturo Bouzas</a>
+  <ul class="collapse">
+  <li><a href="#curvas-de-aprendizaje" id="toc-curvas-de-aprendizaje" class="nav-link" data-scroll-target="#curvas-de-aprendizaje"><span class="header-section-number">8.1.1</span> Curvas de Aprendizaje</a></li>
+  </ul></li>
+  <li><a href="#modelo-de-refuerzo" id="toc-modelo-de-refuerzo" class="nav-link" data-scroll-target="#modelo-de-refuerzo"><span class="header-section-number">8.2</span> Modelo de Refuerzo</a>
+  <ul class="collapse">
+  <li><a href="#proceso-de-carga---descarga" id="toc-proceso-de-carga---descarga" class="nav-link" data-scroll-target="#proceso-de-carga---descarga"><span class="header-section-number">8.2.1</span> Proceso de carga - descarga</a></li>
+  <li><a href="#reducción-del-error-de-predicción-como-motor-del-aprendizaje" id="toc-reducción-del-error-de-predicción-como-motor-del-aprendizaje" class="nav-link" data-scroll-target="#reducción-del-error-de-predicción-como-motor-del-aprendizaje"><span class="header-section-number">8.2.2</span> Reducción del error de predicción como motor del aprendizaje</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modelo de Aprendizaje por Refuerzo</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="arturo-bouzas" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="arturo-bouzas"><span class="header-section-number">8.1</span> Arturo Bouzas</h2>
+<p>Como un resultado de la selección natural, los agentes biológicos son sistemas con mecanismos que les permiten detectar, predecir y controlar los sucesos biológicamente importantes (SBI). Recordemos que los SBI son sucesos con valor hedónico, también conocidos como refuerzos, los cuales incrementan el éxito reproductivo diferencial de los organismos. Para ejecutar estas funciones de detección, predicción y control de SBI los organismos necesitan hacer contacto con la estructura causal del entorno: estructura a la cual designamos bajo el término de <em>propiedades estadísticas del entorno</em>.</p>
+<p>Una parte de la estructura estadística de los SBI consiste de estímulos que se despliegan en el tiempo y en el espacio, los cuales en algunas ocasiones aparecen solos, mientras que en otras instancias aparecen seguidos (contiguos) de un refuerzo. Hay tiempos sin nubes y otros con nubes, estos últimos pueden ser seguidos o no de lluvia. La tarea para el organismo es determinar si existe una relación causal entre las nubes y la lluvia. Una segunda parte de la estructura estadística del entorno consiste del hecho de que, con relación al despliegue de respuestas de los organismos en el tiempo y en el espacio, algunas ocasiones estas respuestas van seguidas de un refuerzo y en otras ocasiones no. Hay veces en las que ustedes le dicen “hola” a una persona y otras en las que no. Después del “hola” ustedes pueden recibir, o no, otro “hola” de regreso. Los protocolos de condicionamiento clásico e instrumental definen, como una primera aproximación, las estructuras causales más simples que se estudiaron en buena parte del siglo XX. En los dos capítulos anteriores, resumimos la literatura empírica acerca del papel de la contigüidad en la asignación de crédito a estímulos y respuestas que permiten <em>predecir y controlar</em> los refuerzos. Presentamos evidencia que muestra que aunque la contigüidad es importante, esta no es ni necesaria, ni suficiente para la asignación de crédito.</p>
+<p>Para dar cuenta de los resultados empíricos presentados en los capítulos anteriores, en la segunda mitad del siglo XX se consolidó un modelo matemático, conocido como <em>Aprendizaje por Refuerzo</em>, junto con varias modificaciones del mismo. El propósito de este capítulo es presentar estos modelos y su desarrollo como respuesta a la evidencia sobre el papel de la contigüidad.</p>
+<p>.</p>
+<section id="curvas-de-aprendizaje" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="curvas-de-aprendizaje"><span class="header-section-number">8.1.1</span> Curvas de Aprendizaje</h3>
+<p>El aprendizaje es un proceso dinámico, que describe los cambios en el comportamiento como una función de la experiencia de los organismos. Desde finales del siglo XIX se han obtenido “curvas de Aprendizaje” que describen cambios en alguna medida de ejecución de los organismos como una función de las ocasiones en las que los estímulos que encaran o las respuestas que despliegan van seguidos de un refuerzo.</p>
+<p>Como ilustración, presentamos dos ejemplos, el primero es la curva de adquisición y extinción de la frecuencia del reflejo de parpadeo, en un protocolo de condicionamiento clásico con humanos. Las curvas representan diferentes intensidades del soplo al ojo. (Parssey, 1948) <img src="#.png" class="img-fluid">(media/16817041801690/16817879706073.jpg)</p>
+<p>Un segundo ejemplo es la curva de adquisición de la velocidad de tocar una palanca en un protocolo de condicionamiento instrumental con ratas (Ramond, 1954). Las dos curvas representan los datos obtenidos con diferentes niveles de privación.</p>
+<p><img src="#.png" class="img-fluid">(media/16817041801690/16817882003115.jpg)</p>
+<p>La siguiente curva de adquisición idealizada, captura los datos de adquisición presentados en las dos figuras anteriores. Podemos ver que es una curva negativamente acelerada de ganancias decrecientes, esto es, el impacto de que un refuerzo siga a una respuesta se va reduciendo conforme se acumulan las ocasiones en las que una respuesta va seguida de un refuerzo.</p>
+<p><img src="#.png" class="img-fluid">(media/16817041801690/16817883408926.jpg)</p>
+<p>Nota. Una alternativa teórica supone que el aprendizaje no es un proceso gradual, sino uno de cambio abrupto. Si este fuese el caso, las curvas de adquisición de crecimiento gradual decreciente podrían ser un artefacto de promediar la ejecución de animales con cambios <em>no</em> continuos en el aprendizaje. Considere el caso de un grupo de animales cuya ejecución es promediada. Uno de los animales empieza a responder al ensayo 10, otro al 20, otro al 30, otro al 40 y así hasta un animal que responde al ensayo 80: al promediar estos datos, la curva de aprendizaje aparecerá como una curva continua. Por esta razón, Skinner, Estes, Spence y más recientemente Gallistel argumentan en favor de analizar los datos de sujetos individuales y, preferentemente, registros acumulativos en lugar de los datos promediados. En ese mismo sentido, los modelos que presentaremos a continuación resultan válidos cuando los datos analizados provienen de sujetos individuales.</p>
+<p>Los modelos de refuerzo modelan la forma de las curvas de adquisición obtenidas empíricamente. El modelo de refuerzo más general es un sistema dinámico que describe los cambios en el valor de un estímulo y/o respuesta a lo largo del tiempo, como una función del número de ocasiones en las que un estímulo o una respuesta van seguidas de un refuerzo.</p>
+<p>Pasen al simulador de ecuaciones en diferencia para entender los modelos dinámicos discretos.</p>
+</section>
+</section>
+<section id="modelo-de-refuerzo" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="modelo-de-refuerzo"><span class="header-section-number">8.2</span> Modelo de Refuerzo</h2>
+<p>Los modelos de refuerzo le asignan un número a cada estímulo y/o respuesta: esta magnitud representa la calidad del estímulo/respuesta como predictor de un refuerzo. A lo largo del siglo XX, a esta magnitud se le conoció como fuerza del reflejo, fuerza del hábito, fuerza asociativa del estímulo y fuerza de la respuesta. Para nuestros propósitos el número refleja el <em>valor</em> predictivo de un estímulo o de una respuesta y simplemente le llamaremos el valor V del estímulo i, o el valor Q de la respuesta i.</p>
+<p>El modelo de refuerzo propone que después de cada presentación de un estímulo o la emisión de una respuesta, su valor se actualiza como una función de si este va seguido o no de un refuerzo. Es importante señalar que el modelo asume que la actualización del valor de un estímulo o una respuesta solo ocurre en las ocasiones en las que estos se presentan. El valor predictivo de un tono solo se actualiza cuando el tono se presenta y no en su ausencia. Esto implica que el mero paso del tiempo sin el tono o la presentación de otros estímulos no alteran el valor del tono. Por esta razón, a estos modelos se les llama también modelos basados en ensayos. Esto es, la variable importante que determina el valor predictivo (la asignación de crédito) es el número de ocasiones en las que un estímulo o una respuesta son seguidos de un reforzador. Mientras mayor es este número, mayor será el valor adquirido por el estímulo o la respuesta. De forma complementaria, el valor de estos estímulos o respuestas decrementa cuando estos se presentan sin ser seguidos por el reforzador.</p>
+<p>En 1950, Bush y Mosteller propusieron una versión matemática del modelo de aprendizaje por refuerzo esbozado en el párrafo anterior. Esta versión sigue siendo la base que sustenta varios de los modelos más recientes, tanto en la psicología como en el aprendizaje de máquinas.</p>
+<p>La estructura matemática de los modelos de refuerzo tiene diferentes interpretaciones teóricas. Nosotros consideraremos dos:</p>
+<ol type="1">
+<li>Un proceso de carga - descarga y</li>
+<li>Un proceso de reducción del error</li>
+</ol>
+<section id="proceso-de-carga---descarga" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="proceso-de-carga---descarga"><span class="header-section-number">8.2.1</span> Proceso de carga - descarga</h3>
+<p>Los modelos de refuerzo son una propuesta de solución computacional a la asignación de crédito. La solución incluye dos pasos: el primero es la reducción del tamaño inicial del espacio de candidatos para incluir únicamente sucesos que son contiguos, similares, novedosos y evolutivamente relevantes con relación a los SBI. El segundo es un mecanismo que permita ir reduciendo, a través de la experiencia, el espacio de candidatos hasta terminar con uno solo. El modelo de refuerzo canónico combina un algoritmo de ascenso de colina con el sesgo de contigüidad. Bush y Mosteller (1951) formalizaron esta clase de modelos que, en diferentes variantes, han dominado la literatura teórica y experimental en el estudio del aprendizaje a partir de la década de los 70s del siglo pasado.</p>
+<p>Como ya se dijo antes, la forma más literal de interpretar el modelo de refuerzo es como un proceso en el cual: cada refuerzo incrementa (carga, fortalece) el valor del estímulo / respuesta que le antecede y cada ocurrencia del estímulo / respuesta sin ser acompañado de un refuerzo decrementa (descarga) su valor. Este es un proceso en el que la variable <span class="math inline">\(V\)</span> se actualiza con cada ocurrencia del estímulo / respuesta como una función que varía dependiendo de si el estímulo/respuesta va seguida o no de un refuerzo. La carga de la batería de su celular es un ejemplo muy cercano a su vida cotidiana que ejemplifica el proceso descrito. Para que su celular funcione, ustedes tienen que conectarlo a una toma de corriente. Mientras está conectado, la carga de la batería se va actualizando hasta llegar a un punto máximo. Al usarlo sin tenerlo conectado, la batería se va descargando como una función del uso del celular sin una carga adicional.</p>
+<p>Veamos cómo se aplica este modelo en el caso de un protocolo estándar de condicionamiento clásico: en este contexto, se observa un estímulo/respuesta candidato a la asignación de crédito y a cada presentación de él se le conoce como un ensayo. Cada ocurrencia de un ensayo puede estar acompañado o no de un SBI. Consideremos que <span class="math inline">\(Vx\)</span> represente el valor predictivo de un estímulo <span class="math inline">\(x\)</span> . Nos interesa la dinámica del cambio en <span class="math inline">\(Vx\)</span> conforme un organismo experimenta ensayos en los que un estímulo condicionado <span class="math inline">\(x\)</span> va seguido de un refuerzo. Para facilitar la aplicación del modelo, supondremos que el tiempo es discreto y el subíndice <span class="math inline">\(t\)</span> representa el momento en que se presenta el estímulo <span class="math inline">\(x\)</span>. La variable <span class="math inline">\(Vx_t+1\)</span> es el valor actualizado del estímulo <span class="math inline">\(x\)</span> en el siguiente ensayo <span class="math inline">\(t+1\)</span>. La variable <span class="math inline">\(R\)</span> representa si se presentó o no un refuerzo después del estímulo <span class="math inline">\(x\)</span> . <span class="math inline">\(R\)</span> puede tener solo dos valores, uno si el refuerzo se presenta después del estímulo <span class="math inline">\(x\)</span> o cero si el estímulo <span class="math inline">\(x\)</span> se presenta sin ser seguido por el refuerzo.</p>
+<p>Vamos a asumir que <span class="math inline">\(Vx_t+1\)</span> depende sólo de dos factores: 1. su valor acumulado hasta el ensayo inmediatamente anterior <span class="math inline">\(Vx_t\)</span> 2. el valor de <span class="math inline">\(R_t\)</span> en el ensayo actual</p>
+<p>$Vx_t+1 = Vx_t + R</p>
+<ol start="3" type="1">
+<li>La expresión anterior supone que el efecto del valor de V en el ensayo anterior tiene el mismo peso que el reforzador presentado o no en el momento actual. Nosotros deseamos que la ecuación capture la importancia relativa de las dos variables. Para ello, supondremos que el impacto de esas dos variables es una suma ponderada, donde el parámetro <span class="math inline">\(a\)</span> representa el peso de ponderación asignado a cada uno de los dos factores. Si el valor de <span class="math inline">\(a\)</span> esta entre cero y uno, los parámetros asociados con cada factor serán <span class="math inline">\(a\)</span> y <span class="math inline">\((1-a)\)</span>.</li>
+</ol>
+<p><span class="math inline">\(%\)</span>Vx_t+1 = (1-a)Vx_t + aR_t<span class="math inline">\(%\)</span> donde: <span class="math inline">\(0\&lt;a\&lt;1\)</span></p>
+<p>La ecuación anterior es una ecuación recurrente, en la que en cada iteración (presentación del estímulo <span class="math inline">\(x\)</span>) hay siempre un Vx viejo y un Vx nuevo. La ecuación describe la actualización de <span class="math inline">\(Vx\)</span> de ensayo a ensayo, como una función del valor de <span class="math inline">\(Vx\)</span> acumulado hasta el ensayo anterior y la presentación o ausencia del SBI. Vx_t es la integración, el acumulado, de todas las experiencias previas con el refuerzo. En cada ensayo, la Vx nueva del ensayo anterior se convierte en la Vx vieja del presente ensayo, contribuyendo a generar una nueva Vx. Pase al simulador x para revisar ecuaciones recurrentes.</p>
+<p>El parámetro <span class="math inline">\(a\)</span>, que multiplica al refuerzo, determina la velocidad del aprendizaje: mientras mayor sea su valor, más rápido será el aprendizaje. Una forma de entender el papel de <span class="math inline">\(a\)</span>, es considerarlo como el parámetro que especifica la importancia de la experiencia acumulada hasta el momento (el valor del pasado), relativa a la ocurrencia o no de un refuerzo (el valor del presente). Valores cercanos a cero sugieren que la experiencia acumulada es más importante que una nueva experiencia con un refuerzo, resultando en poco aprendizaje, mientras que valores cercanos a uno sugieren que la presentación del refuerzo es más importante que la experiencia acumulada hasta ese momento, resultando en un rápido aprendizaje. Consideren una interacción de larga duración con una amistad que ha resultado en un valor alto para ustedes asociado con esa relación. Nos podemos preguntar cuál es el impacto de que una mañana esa amistad no los salude. Si el parámetro <span class="math inline">\(a\)</span> fuese cercano a cero, el no saludo no modificaría sustancialmente el valor V de la amistad, mientras que si el valor de <span class="math inline">\(a\)</span> fuese cercano a uno, a pesar de los años de experiencias positivas con esa amistad, su impacto en el valor V sería más significativo.</p>
+<p>Las siguientes figuras muestran los resultados, ensayo a ensayo, de una simulación con diferentes valores del parámetro <span class="math inline">\(a\)</span>.</p>
+<p><img src="#.png" class="img-fluid"></p>
+<p><img src="#.png" class="img-fluid"></p>
+<p><img src="#.png" class="img-fluid"></p>
+</section>
+<section id="reducción-del-error-de-predicción-como-motor-del-aprendizaje" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="reducción-del-error-de-predicción-como-motor-del-aprendizaje"><span class="header-section-number">8.2.2</span> Reducción del error de predicción como motor del aprendizaje</h3>
+<p>El reacomodo de los términos de la ecuación de carga - descarga permite una interpretación alternativa del modelo de aprendizaje por refuerzo: esta vez en términos de un mecanismo de reducción en el error de predicción. Estos modelos representan hoy la versión dominante en la psicología del aprendizaje y las neurociencias.</p>
+<p>Arreglando los términos de la ecuación del integrador con fuga:</p>
+<p><span class="math inline">\(%\)</span>V_t+1 = (1-a)V_t + aR_t<span class="math inline">\(%\)</span></p>
+<p><span class="math inline">\(%\)</span>V_t+1 = V_t - aV_t + aR_t<span class="math inline">\(%\)</span></p>
+<p><span class="math inline">\(%\)</span>V_t+1 = V_t + a (R_t -V_t)<span class="math inline">\(%\)</span></p>
+<p>Restándole <span class="math inline">\(V_t\)</span> a ambos lados de la ecuación anterior, dejando que <span class="math inline">\(∆Vx = Vx_t+1 – Vx_t\)</span> entonces el cambio de ensayo a ensayo es descrito, agrupando términos:</p>
+<p><span class="math inline">\(%\)</span>∆Vx = V_t + a (R_t -V_t) - V_t<span class="math inline">\(%\)</span> <span class="math inline">\(%\)</span>∆Vx = a(R_t – Vx_t)<span class="math inline">\(%\)</span></p>
+<p>Esta segunda forma de la ecuación, enfatiza la magnitud del cambio momento a momento, en lugar del valor del estímulo momento a momento.</p>
+<p>En cualquiera de las dos formas de presentar la ecuación del integrador, el valor V es una función de la diferencia entre el refuerzo obtenido y el valor del estímulo en el tiempo t. A esta diferencia dentro del paréntesis se le conoce como el error de predicción: la diferencia entre la R que se obtiene y lo que se esperaba obtener, V. Cuando esta diferencia es igual a cero, no habrá cambios en el valor de V. Es por esta forma de la ecuación que estamos llamando a V_t el valor predictivo de la respuesta. El parámetro a, entre 0 y 1, sigue representando la velocidad del aprendizaje, en este caso, la importancia del error de predicción.</p>
+<p>En la literatura contemporánea, a la ecuación anterior se le conoce como regla delta.</p>
+<p><span class="math inline">\(%\)</span>V_t+1 = V_t + adelta<span class="math inline">\(%\)</span></p>
+<p>donde <span class="math inline">\(%\)</span>delta = (lambda_t - Vx_t)<span class="math inline">\(%\)</span> es el error de predicción, es decir, el motor del aprendizaje. Bajo el formato que enfatiza la magnitud del cambio, delta se incorpora a la ecuación de la siguiente forma:</p>
+<p><span class="math inline">\(%\)</span>∆Vx = a(delta)<span class="math inline">\(%\)</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Capítulo 5.html" class="pagination-link" aria-label="Correlación, Tiempo y Contingencia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Correlación, Tiempo y Contingencia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Capítulo 7.html" class="pagination-link" aria-label="El Modelo de Rescorla y Wagner">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
