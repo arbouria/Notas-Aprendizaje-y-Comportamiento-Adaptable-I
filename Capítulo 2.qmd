@@ -7,7 +7,9 @@ Si el término “adaptación” se utiliza para designar aquellos rasgos que so
 
 El reabastecimiento de energía a través de la acción del organismo está limitado por dos grupos de restricciones, uno del organismo y otro del entorno. La primera condición limitante es que el comportamiento toma un tiempo para llevarse a cabo. Dado que el tiempo disponible es ﬁníto, la suma de todos los comportamientos llevados a cabo es igual al total del tiempo disponible. 
 
-T=t1 +t2+t3.....tn										(1)
+$$
+T = t_1 + t_2 + t_3 \dots t_n
+$$
 
 Esta es una *restricción lineal* bajo la cual los diferentes comportamientos *compiten* por el tiempo disponible. Este planteamiento asume que no existe tal cosa como una “ausencia de comportamiento”, por lo que en toda unidad de tiempo se está generando un tipo de conducta que consume una duración particular de tiempo (aunque este comportamiento sea “reposar” o que el organismo permanezca estático). Bajo este esquema, el incremento de una unidad de tiempo asignado a uno de los comportamientos por parte del organismo, implica una menor unidad de tiempo disponible para el resto de los comportamientos. Cada segundo de tiempo t dedicada al comportamiento 1 es una un segundo menos que puede dedicarse al resto de los *n* comportamientos.
 

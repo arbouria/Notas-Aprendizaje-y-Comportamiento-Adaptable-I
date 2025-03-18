@@ -59,7 +59,7 @@ format:
       fig-responsive: true
 
       linestretch: 1.75
-      fontsize: "18px"
+      fontsize: "16px"
 
       link-external-icon: false
       link-external-newwindow: true
@@ -79,21 +79,8 @@ format:
 
     pdf: 
       title: "Notas de Aprendizaje y Comportamiento Adaptable"
-      documentclass: scrreprt  
-      papersize: a4
-      geometry:
-        - paperwidth=8.0000000000000in
-        - paperheight=10.000000000000in
-        - left=1.25in
-        - textwidth= 5.25in
-        - top=1.00in
-        - textheight=8.25in
+      pdf-engine: xelatex
+      documentclass: book  
       toc: true
       colorlinks: true
-      fig-dpi: 300
-      fig-width: 6
-      fig-height: 6
-      fig-align: left
-      fig-pos: H'
       keep-tex: true
-

@@ -17,16 +17,16 @@ Para dar cuenta de los resultados empíricos presentados en los capítulos anter
 El aprendizaje es un proceso dinámico, que describe los cambios en el comportamiento como una función de la experiencia de los organismos. Desde finales del siglo XIX se han obtenido “curvas de Aprendizaje” que describen cambios en alguna medida de ejecución de los organismos como una función de las ocasiones en las que los estímulos que encaran o las respuestas que despliegan van seguidos de un refuerzo. 
 
 Como ilustración, presentamos dos ejemplos, el primero es la curva de adquisición y extinción de la frecuencia del reflejo de parpadeo, en un protocolo de condicionamiento clásico con humanos. Las curvas representan diferentes intensidades del soplo al ojo. (Parssey, 1948)
-![](#)(media/16817041801690/16817879706073.jpg)
+
+IMAGEN
 
 Un segundo ejemplo es la curva de adquisición de la velocidad de tocar una palanca en un protocolo de condicionamiento instrumental con ratas (Ramond, 1954). Las dos curvas representan los datos obtenidos con diferentes niveles de privación.
 
-![](#)(media/16817041801690/16817882003115.jpg)
-
+IMAGEN
 
 La siguiente curva de adquisición idealizada, captura los datos de adquisición presentados en las dos figuras anteriores. Podemos ver que es una curva negativamente acelerada de ganancias decrecientes, esto es, el impacto de que un refuerzo siga a una respuesta se va reduciendo conforme se acumulan las ocasiones en las que una respuesta va seguida de un refuerzo.
 
-![](#)(media/16817041801690/16817883408926.jpg)
+IMAGEN
 
 Nota. Una alternativa teórica supone que el aprendizaje no es un proceso gradual, sino uno de cambio abrupto. Si este fuese el caso, las curvas de adquisición de crecimiento gradual decreciente podrían ser un artefacto de promediar la ejecución de animales con cambios *no* continuos en el aprendizaje. Considere el caso de un grupo de animales cuya ejecución es promediada. Uno de los animales empieza a responder al ensayo 10, otro al 20, otro al 30, otro al 40 y así hasta un animal que responde al ensayo 80: al promediar estos datos, la curva de aprendizaje aparecerá como una curva continua. Por esta razón, Skinner, Estes, Spence y más recientemente Gallistel argumentan en favor de analizar los datos de sujetos individuales y, preferentemente, registros acumulativos en lugar de los datos promediados. En ese mismo sentido, los modelos que presentaremos a continuación resultan válidos cuando los datos analizados provienen de sujetos individuales. 
 
@@ -60,12 +60,17 @@ Vamos a asumir que $Vx_t+1$ depende sólo de dos factores:
 1. su valor acumulado hasta el ensayo inmediatamente anterior $Vx_t$
 2. el valor de $R_t$ en el ensayo actual
 
-$Vx_t+1 = Vx_t + R
+$$
+Vx_{t+1} = Vx_t + R
+$$
 
 3. La expresión anterior supone que el efecto del valor de V en el ensayo anterior tiene el mismo peso que el reforzador presentado o no en el momento actual. Nosotros deseamos que la ecuación capture la importancia relativa de las dos variables. Para ello, supondremos que el impacto de esas dos variables es una suma ponderada, donde el parámetro $a$ representa el peso de ponderación asignado a cada uno de los dos factores. Si el valor de $a$ esta entre cero y uno, los parámetros asociados con cada factor serán $a$ y $(1-a)$.
 
-$%$Vx_t+1 = (1-a)Vx_t + aR_t$%$
-donde: $0\<a\<1$
+$$
+Vx_{t+1} = (1-a)Vx_t + aR_t
+$$
+
+donde: $0 < a < 1$.
 
 La ecuación anterior es una ecuación recurrente, en la que en cada iteración (presentación del estímulo $x$) hay siempre un Vx viejo y un Vx nuevo. La ecuación describe la actualización de $Vx$ de ensayo a ensayo, como una función del valor de $Vx$ acumulado hasta el ensayo anterior y la presentación o ausencia del SBI. Vx_t es la integración, el acumulado, de todas las experiencias previas con el refuerzo. En cada ensayo, la Vx nueva del ensayo anterior se convierte en la Vx vieja del presente ensayo, contribuyendo a generar una nueva Vx. 
 Pase al simulador x para revisar ecuaciones recurrentes.
@@ -74,13 +79,7 @@ El parámetro $a$, que multiplica al refuerzo, determina la velocidad del aprend
 
 Las siguientes figuras muestran los resultados, ensayo a ensayo, de una simulación con diferentes valores del parámetro $a$.
 
-![](#)
-
-
-![](#)
-
-
-![](#)
+IMAGENES
 
 
 ### Reducción del error de predicción como motor del aprendizaje 
@@ -89,17 +88,27 @@ El reacomodo de los términos de la ecuación de carga -  descarga permite una i
 
 Arreglando los términos de la ecuación del integrador con fuga:
 
-$%$V_t+1 = (1-a)V_t + aR_t$%$
+$$
+V_{t+1} = (1-a)V_t + aR_t
+$$
 
-$%$V_t+1 = V_t - aV_t + aR_t$%$ 
+$$
+V_{t+1} = V_t - aV_t + aR_t
+$$ 
 
-$%$V_t+1 = V_t + a (R_t -V_t)$%$
+$$
+V_{t+1} = V_t + a (R_t -V_t)
+$$
 
+Restándole $V_t$ a ambos lados de la ecuación anterior, dejando que $\Delta Vx = Vx_t+1 – Vx_t$ entonces el cambio de ensayo a ensayo es descrito, agrupando términos:
 
-Restándole $V_t$ a ambos lados de la ecuación anterior, dejando que $∆Vx = Vx_t+1 – Vx_t$ entonces el cambio de ensayo a ensayo es descrito, agrupando términos:
+$$
+\Delta Vx = V_t + a (R_t -V_t) - V_t
+$$
 
-$%$∆Vx = V_t + a (R_t -V_t) - V_t$%$
-$%$∆Vx = a(R_t – Vx_t)$%$
+$$
+\Delta Vx = a(R_t – Vx_t)
+$$
 
 Esta segunda forma de la ecuación, enfatiza la magnitud del cambio momento a momento, en lugar del valor del estímulo momento a momento. 
 
@@ -107,7 +116,9 @@ En cualquiera de las dos formas de presentar la ecuación del integrador, el val
 
 En la literatura contemporánea, a la ecuación anterior se le conoce como regla delta.
 
-$%$V_t+1 = V_t + adelta$%$
+$$
+V_{t+1} = V_t + a \Delta Vx
+$$
 
 donde $%$delta = (lambda_t - Vx_t)$%$ es el error de predicción, es decir, el motor del aprendizaje. Bajo el formato que enfatiza la magnitud del cambio, delta se incorpora a la ecuación de la siguiente forma:
 

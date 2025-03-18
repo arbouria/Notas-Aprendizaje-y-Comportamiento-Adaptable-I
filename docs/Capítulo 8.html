@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Arturo Bouzas">
+
+<title>Notas de Aprendizaje y Comportamiento Adaptable - Acción Como Elección</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Capítulo 9.html" rel="next">
+<link href="./Capítulo 7.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 10,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Capítulo 8.html"><span class="chapter-title">Acción Como Elección</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./cover.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notas de Aprendizaje y Comportamiento Adaptable</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/arbouria/Notas-Aprendizaje-y-Comportamiento-Adaptable-I" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Notas-de-Aprendizaje-y-Comportamiento-Adaptable.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Notas-de-Aprendizaje-y-Comportamiento-Adaptable.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Principios de la Selección Natural</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evolución de la Adaptabilidad del Comportamiento: El papel de las restricciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Asignación de Crédito</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Asignación de Crédito para Respuestas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Correlación, Tiempo y Contingencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Modelo de Aprendizaje por Refuerzo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El Modelo de Rescorla y Wagner</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 8.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Acción Como Elección</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Elección Recurrente: Igualación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Capítulo 10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Comportamiento de Elección: Maximización Local</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#funciones-de-respuesta-para-programas-de-intervalo-variable" id="toc-funciones-de-respuesta-para-programas-de-intervalo-variable" class="nav-link active" data-scroll-target="#funciones-de-respuesta-para-programas-de-intervalo-variable">Funciones de Respuesta para programas de intervalo variable</a>
+  <ul class="collapse">
+  <li><a href="#relación-entre-tasas-absolutas-y-relativas-de-respuesta" id="toc-relación-entre-tasas-absolutas-y-relativas-de-respuesta" class="nav-link" data-scroll-target="#relación-entre-tasas-absolutas-y-relativas-de-respuesta">Relación Entre Tasas Absolutas y Relativas de Respuesta</a></li>
+  <li><a href="#posibles-funciones-de-refuerzo" id="toc-posibles-funciones-de-refuerzo" class="nav-link" data-scroll-target="#posibles-funciones-de-refuerzo">Posibles Funciones de Refuerzo</a></li>
+  <li><a href="#la-ley-del-efecto-relativa" id="toc-la-ley-del-efecto-relativa" class="nav-link" data-scroll-target="#la-ley-del-efecto-relativa">La ley del Efecto Relativa</a></li>
+  <li><a href="#impacto-sobre-la-modificación-de-la-conducta" id="toc-impacto-sobre-la-modificación-de-la-conducta" class="nav-link" data-scroll-target="#impacto-sobre-la-modificación-de-la-conducta">Impacto sobre la modificación de la conducta</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/arbouria/Notas-Aprendizaje-y-Comportamiento-Adaptable-I/edit/main/Capítulo 8.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Acción Como Elección</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Arturo Bouzas </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Todas las variantes de la ley del efecto nos dicen que las respuestas que son seguidas por un refuerzo incrementan en frecuencia. Si esta fuera la única información que nos proporciona este concepto, difícilmente le asignaríamos el estatus de una una ley y su utilidad para entender el comportamiento sería muy limitada. En un escenario aplicado, para la madre que quiere modificar la conducta de un hijo, la sola recomendación de reforzar la conducta que desea incrementar no resulta totalmente satisfactoria. La madre quisiera saber si es necesario reforzar cada instancia de la respuesta o solo algunas de ellas, quisiera saber si el refuerzo 20 tiene el mismo impacto que el refuerzo 10 y, finalmente, quisiera saber si el seguimiento de distintas reglas para la entrega del refuerzo marca una diferencia.</p>
+<p>En las notas sobre programas de refuerzo, le dimos ya una respuesta a la última pregunta: presentamos el comportamiento característico asociado con distintas reglas de entrega de refuerzo y, en particular, resaltamos que en programas de razón variable los organismos responden a una tasa más alta que en los programas de intervalo variable. En el escenario aplicado, la madre preguntaría si para conseguir que su hijo emita la respuesta deseada a cierta tasa, el valor de la razón debe ser de 5, 10, 50, 200 o 500 respuestas por refuerzo. La madre también quisiera saber qué diferencia hace para el comportamiento observado que la oportunidad de obtener un refuerzo sea de 1 en cada 5, 10, 20, 100, 200 o 500 minutos.</p>
+<p>Por lo tanto, lo que le hace falta a la ley del efecto con la que iniciamos esta nota es especificar la función que describe la relación entre la tasa de respuesta de un organismo y una medida del refuerzo. Para propósitos de estas notas, la medida del refuerzo será la tasa de ocurrencia del reforzador:</p>
+<p><span class="math display">\[R_i = f (r_i)\]</span></p>
+<p>Un primer paso para especificar la función aludida es encontrar la relación empírica entre la tasa de respuesta de los organismos y distintos valores dentro de programas de intervalo variable y de razón variable.</p>
+<section id="funciones-de-respuesta-para-programas-de-intervalo-variable" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-de-respuesta-para-programas-de-intervalo-variable">Funciones de Respuesta para programas de intervalo variable</h2>
+<p>Catania y Reynolds (1968) publicaron el primer estudio sistemático en el que se estudió la relación, “en equilibrio”, entre tasas de respuesta y tasas de refuerzo que resultan de variar los valores del programa de intervalo. Al hablar de “equilibrio”, se hace referencia a un protocolo en el que se entrena al animal con un valor de un programa IV y se ejecutan el número de sesiones necesarias para alcanzar un comportamiento estable; finalmente, los datos que se analizan son los correspondientes a los últimos días de exposición. El procedimiento se repite para cada uno de los programas IV estudiados. De esta manera, se determina la relación entre la tasa de refuerzo de distintos intervalos (valor de entrada de la función) y la tasa de respuesta de los organismos (valor de salida de la función).</p>
+<p>imagen</p>
+<p>En la siguiente figura se muestran los resultados del estudio de Catania y Reynolds. Puede verse que hay una relación de ganancias decrecientes entre la tasa de respuesta y la tasa de refuerzo que produce. La función crece rápidamente conforme incrementa la tasa de refuerzo (es decir, conforme aumenta el número de refuerzos por unidad de tiempo), hasta alcanzar un punto después del cual, incrementos subsecuentes en la tasa de refuerzo tienen un efecto cada vez menor sobre la tasa de respuesta del organismo. Esta función se encontró posteriormente en docenas de estudios (de Villiers y Herrnstein).</p>
+<section id="relación-entre-tasas-absolutas-y-relativas-de-respuesta" class="level3">
+<h3 class="anchored" data-anchor-id="relación-entre-tasas-absolutas-y-relativas-de-respuesta">Relación Entre Tasas Absolutas y Relativas de Respuesta</h3>
+<p>Para Herrnstein (1970) fue claro que cualquier función que relacione la tasa de respuesta (como valor de salida) a la tasa de refuerzo (como valor de entrada) debe satisfacer dos condiciones: * primero, dar cuenta de la relación obtenida en los programas de intervalo variable cuando hay una sola opción de respuesta disponible para el organismo y * segundo, ser consistente con la ley de igualación, cuando hay dos o más opciones de respuesta para el organismo.</p>
+<p>Recordemos que para los modelos de refuerzo, los animales no llevan un registro de la frecuencia relativa con la que deben emitir cada respuesta, en lugar de ello, estos modelos postulan que para el organismo cada respuesta adquiere un valor por separado, los cuales subyacen a los patrones de respuesta observados. El valor de cada respuesta varía en función del refuerzo que ésta produce. Por otro lado, la tasa relativa con la que el organismo emite cada respuesta es el resultado de una comparación entre el valor adquirido por cada una de las distintas respuestas. El objetivo, por lo tanto, es encontrar la función que describe la relación entre los tres valores: el valor adquirido por cada respuesta; la tasa con la que el organismo emite cada respuesta; y las tasas de refuerzo que resultan de cada una de las tasas de respuesta:</p>
+<p><span class="math display">\[R_i = f (r_i)\]</span></p>
+<p>Y usando la función <em>f</em>, derivar la relación entre las tasas relativas de respuesta y las tasas relativas de refuerzo. La función <em>f</em> la vamos a evaluar por su éxito para dar cuenta de las tasas relativas de respuesta (siguiendo el patrón de la ley de igualación) observadas en programas concurrentes IV - IV. Para ello, debemos tener presente que la programación de los refuerzos en lo programas concurrentes puede hacerse de dos formas:</p>
+<ul>
+<li>La primera es manteniendo constante la tasa de refuerzo a lo largo del experimento, pero variando la proporción asignada a cada respuesta en diferentes condiciones experimentales. Por ejemplo, se pueden programar 60 refuerzos por hora, al mismo tiempo que se establecen diferentes condiciones experimentales en las que se generan las siguientes distribuciones de refuerzos para las dos respuestas posibles: 50-10, 40-20, 30-30, 20-40 y 10-50.</li>
+<li>La segunda es programando una tasa de refuerzo fija para una de las respuestas a lo largo del experimento, a la vez que se varía la tasa de refuerzo para la segunda respuesta en diferentes condiciones experimentales.</li>
+</ul>
+<p>La siguiente figura muestra los resultados de un experimento que compara los resultados de las dos formas de estructurar los programas concurrentes:</p>
+<p>imagen</p>
+<p>La figura del panel izquierdo muestra la tasa de respuesta de las dos opciones bajo la condición donde la tasa de refuerzo total es constante. La figura del panel derecho muestra la tasa de respuesta de las dos opciones bajo la condición en la cual la tasa de refuerzo para una respuesta (símbolos negros) es constante, mientras que la tasa de refuerzo para la otra respuesta es variable (círculos abiertos). Podemos ver que en la primera condición, la tasa de respuesta está linealmente relacionada a su tasa de refuerzo. A mayor tasa de refuerzo, mayor tasa de respuesta. Mientras tanto, en la segunda condición, la tasa de respuesta a la opción con refuerzo fijo disminuye en función del aumento en el refuerzo obtenido en la otra opción de respuesta.</p>
+<p>En otras palabras, la diferencia sútil pero crucial entre las dos condiciones reside en cómo la tasa de respuesta de una opción varía con relación a la tasa de respuesta de la otra opción dentro de una misma condición.</p>
+<p>En la primera condición (refuerzo total constante), si la tasa de refuerzo de una opción aumenta, la tasa de refuerzo de la otra opción decrementa proporcionalmente (dado que el total se encuentra fijo). Esto genera una compensación perfectamente lineal a nivel de las tasas de refuerzo: y las tasas de respuesta reflejan esta relación lineal porque esencialmente ambas opciones compiten por un pool de respuestas fijo.</p>
+<p>En la segunda condición (una opción con refuerzo fijo, la otra con refuerzo variable), el aumento a la tasa de refuerzo para la opción variable disminuye la tasa de respuesta para la opción fija. A pesar de que la tasa de refuerzo de la opción fija no ha cambiado en absoluto, las respuestas a ella disminuyen de todas formas cuando la segunda opción se vuelve más recompensante. Esto demuestra que el organismo no mantiene meramente un registro de las tasas de refuerzo absolutas, sino que ejecuta una computación más compleja sobre el valor relativo de cada opción dentro del contexto más amplio.</p>
+</section>
+<section id="posibles-funciones-de-refuerzo" class="level3">
+<h3 class="anchored" data-anchor-id="posibles-funciones-de-refuerzo">Posibles Funciones de Refuerzo</h3>
+<p>La primera función que podemos considerar tiene su origen en una propuesta de Skinner. De acuerdo a esta, la tasa de respuesta es directamente proporcional a la tasa de refuerzo.</p>
+<p><span class="math display">\[R_i = kr_i\]</span></p>
+<p>La ecuación describe una línea recta, donde el parámetro <strong>k</strong> es su pendiente y representa la traducción de un refuerzo en un incremento fijo en la tasa de respuesta. (Puede trabajar con el correspondiente simulador).</p>
+<p>Para determinar si esta primera función es consistente con la ley de igualación, insertamos la función en la computación de tasas relativas de respuesta. Asumiendo que el refuerzo es el mismo para las dos opciones, el parámetro <strong>k</strong> se cancela y obtenemos la ecuación de igualación.</p>
+<p><span class="math display">\[\frac {R_1} {(R_1 + R_2)} = \frac {kr_1} {(kr_1 + kr_2)}\]</span></p>
+<p>La función que postula proporcionalidad entre respuestas y refuerzos es consistente con los resultados presentados en la Fig x. Sin embargo, la función <span class="math display">\[R_i = kr_i\]</span> propone que la tasa de una respuesta depende únicamente del refuerzo que ésta produce. Por lo tanto, la tasa de una respuesta no debería de cambiar cuando su refuerzo es constante y tan solo se manipula otra fuente de refuerzo. Sin embargo, en el panel derecho de la figura x observamos que la tasa de respuesta con el refuerzo constante decrece conforme incrementa el refuerzo para la respuesta alternativa: fenómeno que se conoce como <strong>contraste conductual</strong>.</p>
+<p>La siguiente es una segunda función de respuesta, consistente con el muy replicado resultado de contraste conductual:</p>
+<p><span class="math display">\[R_1 = \frac {kr_1} {(r_1 + r_2)}\]</span></p>
+<p>La función nos dice que la tasa de una respuesta es una función de la tasa relativa de refuerzo que recibe esta respuesta. Como puede verse en el simulador, si la tasa de refuerzo <span class="math inline">\(r_2\)</span> para la otra opción es constante, la forma de la función de la tasa de respuesta <span class="math inline">\(R_1\)</span> es de ganancias decrecientes, igual a los datos empíricos reportados en la figura x. Por otra parte, si <span class="math inline">\(r_1\)</span> es constante, conforme incrementa el valor de <span class="math inline">\(r_2\)</span>, la tasa de de respuesta <span class="math inline">\(R_1\)</span> decrementa, reproduciendo el patrón de contraste conductual.</p>
+<p>Esta función es consistente con el resultado de la ley de igualación. Sustituyendo y cancelando el parámetro <em>k</em> y los denominadores, <span class="math display">\[\begin{equation}
+\frac{R_1}{R_1 + P_2} = \frac{\frac{kr_1}{r_1 + r_2}}{\frac{kr_1}{r_1 + r_2} + \frac{kr_2}{r_1 + r_2}} = \frac{kr_1}{kr_1 + kr_2} = \frac{r_1}{r_1 + r_2}
+\end{equation}\]</span></p>
+<p>Esta segunda función da cuenta de los resultados obtenidos en programas concurrentes. Sin embargo, veamos qué predice la misma función para experimentos en los que solo se refuerza una de las respuestas, como es el caso de los datos del experimento de Catania y Reynolds. En la ecuación:</p>
+<p><span class="math display">\[R_1 = \frac {kr_1} {(r_1 + r_2)}\]</span></p>
+<p>el valor de <span class="math inline">\(r_2\)</span> es cero, pues solo hay una respuesta (r_1) y la ecuación se reduce a</p>
+<p><span class="math display">\[R_1 = \frac {kr_1} {r_1 }\]</span></p>
+<p>Por lo tanto, terminamos con la función:</p>
+<p><span class="math display">\[R_1 = k\]</span></p>
+<p>la cual nos dice que la tasa de respuesta es una constante y que por ende, la respuesta es insensible a la tasa de refuerzo. Sin embargo, esta conclusión matemática no corresponde a los resultados reportados en la revisión de Villiers y Herrnstein sobre múltiples experimentos similares a los de Catania y Reynolds. En ella, se observa que para protocolos con una única opción de respuesta, dos cosas son ciertas: la tasa de respuesta NO crece linealmente en función de la tasa de refuerzo, contrario a lo que sugiere la primera función de Skinner; y, de igual manera, la tasa de respuesta TAMPOCO es una constante insensible a variaciones en la tasa de refuerzo, contrario a lo que sugiere la segunda función de refuerzo.</p>
+</section>
+<section id="la-ley-del-efecto-relativa" class="level3">
+<h3 class="anchored" data-anchor-id="la-ley-del-efecto-relativa">La ley del Efecto Relativa</h3>
+<p>En un artículo publicado en 1970, Herrnstein propuso una versión de la ley del efecto que simultáneamente daba cuenta de dos de las regularidades empíricas más robustas: la igualación en programas concurrentes y la función de ganancias decrecientes entre tasa de respuesta y la tasa de refuerzo. Propuso un planteamiento que en su momento fue una gran salto:</p>
+<p><em>Todo comportamiento es una instancia de una elección y el papel del refuerzo es redistribuir el comportamiento.</em></p>
+<p>La propuesta descansa en tres supuestos:</p>
+<ol type="1">
+<li>Los organismo están en constante actuar y no existen vacíos conductuales. En toda situación experimental hay al menos dos respuestas, una, <span class="math inline">\(R_1\)</span>, que medimos directamente (como picar una tecla, por ejemplo) y un conjunto de respuestas que no medimos directamente (como dar vueltas, aletear, picar el piso, etcétera) y que que Herrnstein llamó <span class="math inline">\(R_o\)</span>. La suma de estas dos respuestas componen la totalidad del comportamiento <em>k</em>.</li>
+</ol>
+<p><span class="math display">\[R_1 +Ro = k\]</span></p>
+<ol start="2" type="1">
+<li><p>En adición al refuerzo programado en una situación experimental, siempre hay otros refuerzos disponibles para el organismo, llamados <em>ro</em>.</p></li>
+<li><p>Los organismos igualan la frecuencia relativa de la respuesta registrada y de todas las otras respuestas con la tasa relativa de refuerzo de todas las respuestas en una situación experimental.</p></li>
+</ol>
+<p><span class="math display">\[\frac{R_1}{R_1 + R_0}= \frac {r_1} {(r_1 + r_o)}\]</span></p>
+<p><span class="math display">\[R_1+R_0 = k\]</span></p>
+<p><span class="math display">\[\frac{R_1}{k}= \frac {r_1} {(r_1 + r_o)}\]</span></p>
+<p><span class="math display">\[R_1= \frac{kr_1} {(r_1 + r_o)}\]</span></p>
+<p>Recordemos que <span class="math inline">\(k\)</span> es un parámetro que se estima estadísticamente y representa la suma de todos los comportamientos medida en unidades <span class="math inline">\(R_1\)</span>: frecuentemente respuestas por minuto. El valor de <span class="math inline">\(k\)</span> depende de la topografía (la forma específica) de la respuesta <span class="math inline">\(R_1\)</span> que se mide, así como del tiempo que toma ejecutarla. Picar una tecla es mucho más fácil para una paloma de lo que es apretar una palanca para una rata: como consecuencia, el valor de <span class="math inline">\(k\)</span> es mayor cuando se mide el comportamiento de picar una tecla que cuando se mide el comportamiento de apretar una palanca.</p>
+<p><span class="math inline">\(r_o\)</span> es un segundo parámetro que se estima estadísticamente y que representa la tasa de otros refuerzos no controlados en el experimento. <span class="math inline">\(r_o\)</span> se mide en las mismas unidades que <span class="math inline">\(r_1\)</span>: esto es, el número de refuerzos recibidos por unidad de tiempo.</p>
+<p>En el simulador, ustedes pueden ver cómo varía la forma de la función que relaciona la tasa de respuesta a la tasa de refuerzo cuando se varía el valor de <span class="math inline">\(r_o\)</span> dentro de programas de intervalo variable. En general, estos modelos exponen cómo el número de refuerzos por unidad de tiempo generados por una respuesta (dentro de un programa de intervalo variable X) influye sobre la tasa con la que el organismo emite esa respuesta; al mismo tiempo, la tasa de refuerzo que generan las respuestas no controladas (R_o) influye sobre la tasa relativa de la respuesta evaluada (R_1).</p>
+<ul>
+<li><p>La función <span class="math inline">\(R_1\)</span> es de <em>ganancias decrecientes</em>, esto es, el impacto de un refuerzo adicional es <strong>mayor</strong> cuando <span class="math inline">\(r_1\)</span> es pequeño y va <strong>decreciendo</strong> conforme <span class="math inline">\(r_1\)</span> incrementa. Ver figura.</p></li>
+<li><p>La función nos muestra que el impacto de un refuerzo contingente sobre una respuesta <em>depende del contexto de refuerzo</em>. A medida que aumenta <span class="math inline">\(r_o\)</span>, el impacto de incrementar <span class="math inline">\(r_1\)</span> es menor. Con valores de <span class="math inline">\(r_o\)</span> muy pequeños, un contexto de refuerzo muy pobre, la tasa de respuesta es muy sensible a cambios en la tasa de refuerzo <span class="math inline">\(r_1\)</span> y justo lo opuesto ocurre con un contexto de refuerzo muy rico, donde <span class="math inline">\(r_o\)</span> es muy grande. Para una persona en pobreza extrema, pequeños cambios en el monto de su pensión tienen gran impacto en su comportamiento, pero no así para una persona en un entorno de riqueza. Ver figura.</p></li>
+</ul>
+</section>
+<section id="impacto-sobre-la-modificación-de-la-conducta" class="level3">
+<h3 class="anchored" data-anchor-id="impacto-sobre-la-modificación-de-la-conducta">Impacto sobre la modificación de la conducta</h3>
+<p>La ley del efecto relativo ha tenido un gran impacto sobre la práctica de la modificación de la conducta. Considere un caso en el que se pretende reducir un comportamiento indeseable en un niño, como podría ser un comportamiento agresivo. De acuerdo a la versión original de la ley del efecto, una posibilidad es eliminar el refuerzo para ese comportamiento. Desafortunadamente, el refuerzo para la conducta agresiva del agresor puede ser la reacción de sumisión y respeto que este comportamiento induce en el niño agredido, sobre la cual no es fácil tener un control. Otra posibilidad es castigar al niño agresivo, arriesgando el surgimiento de otras respuestas indeseables. El modelo de Herrnstein proporciona una alternativa viable y exitosa: esta consiste en seleccionar y reforzar un comportamiento incompatible con el agresivo. Por ejemplo, se le pide a la maestra reforzar y jugar un juego de mesa con el niño. Para involucrarse plenamente en el juego de mesa, el niño tiene que sacrificar otros de sus comportamientos, entre ellos, sus comportamientos agresivos.</p>
+<p>La estrategia puede extenderse a problemas tan severos como el consumo excesivo de bebidas alcohólicas. Una de las consecuencias del alcoholismo es el creciente aislamiento de la persona, con la asociada reducción en el contexto de refuerzo social. Esto genera un círculo vicioso, puesto que la reducción en el contexto de refuerzo social aumenta el impacto del refuerzo asociado con la bebida alcohólica. De acuerdo al modelo de Herrnstein, una estrategia exitosa sería recuperar la vida social de la persona, incrementando así los refuerzos que conforman su contexto cotidiano.</p>
+<p>Similarmente, si se desea incrementar un comportamiento, la estrategia sugerida por el modelo de Herrnstein consiste en reducir las otras fuentes de refuerzo disponibles para la persona. El impacto de reforzar la conducta de estudio de un niño es mayor si se eliminan las opciones de la televisión y de un celular.</p>
+<p>En resumen, la ley del efecto relativa, al dirigir el estudio del comportamiento al estudio de la elección, proporciona una novedosa alternativa a las prácticas tradicionales de la modificación de la conducta. En lugar de simplemente eliminar o castigar conductas indeseables, se busca promover alternativas deseables y modificar el contexto de refuerzo para influir en las elecciones del individuo.</p>
+</section>
+<section id="evaluación" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación">Evaluación</h3>
+<p>Empíricamente, la ley del efecto relativo de Herrnstein es enormemente exitosa en su descripción de la relación entre tasa de respuesta y la tasa de refuerzo dentro de programas de intervalo variable (de Villiers y Herrnstein). Sin embargo, la ecuación es algo más que un ejercicio para el ajuste de datos empíricos, esta es el resultado de un conjunto de supuestos teóricos que se reflejan en la interpretación de los dos parámetros de la ecuación <span class="math inline">\(k\)</span> y <span class="math inline">\(r_o\)</span>.</p>
+<p>Las siguientes son algunas de las predicciones teóricas del modelo:</p>
+<ul>
+<li>La suma del total de respuestas, capturada por <span class="math inline">\(k\)</span>, debe ser constante e independiente de variables que afecten el valor del refuerzo contingente y el valor de <span class="math inline">\(r_o\)</span>, tales como manipulaciones motivacionales y la calidad del refuerzo contingente. En otras palabras, cuando se dan cambios en el valor de los refuerzos, lo que puede cambiar es la frecuencia relativa de las distintas respuestas, pero el número total de respuestas potencialmente realizables por el organismo debe permanecer constante.</li>
+<li>Las manipulaciones en el tipo y la magnitud del refuerzo contingente deben ser capturadas por cambios en <span class="math inline">\(r_o\)</span>.</li>
+<li>Agregar otra fuente de refuerzo debe reducir el valor del parámetro <span class="math inline">\(r_o\)</span>. ### Quedamos de elaborar más/ejemplificar estos últimos puntos..</li>
+</ul>
+<p>La evidencia acerca de los supuestos teóricos de la ley del efecto relativo no son consistentemente favorables (Dallery y Soto, 2004), en particular, en varios experimentos se reportan cambios en el parámetro <span class="math inline">\(k\)</span> cuando se dan cambios en la magnitud de refuerzo: es decir que no sólamente se redistribuye el número de respuestas asignado a las distintas opciones de comportamiento, sino que en efecto, el número total de respuestas que el organismo emite dentro de una cierta duración temporal incrementa. Estos resultados, acompañados del hecho de que la ecuación no se ha aplicado a los resultados obtenidos en programas de razón variable, han llevado a la derivación de la ecuación de ganancias decrecientes a partir de otros supuestos, tema que abordaremos en las siguientes notas. Podemos concluir que, sin duda, la ley del efecto relativo de Herrnstein no solo generó una gran cantidad de evidencia empírica, sino que adicionalmente brindó las bases para la gran mayoría de los modelos de acción. Estas bases serán desarrolladas a detalle posteriormente, pero pueden resumirse en la siguiente lista:</p>
+<ol type="1">
+<li><p>El estudio de la acción es el estudio de la elección.</p></li>
+<li><p>La acción observada se mide por su tasa de ocurrencia y refleja la distribución total del comportamiento posible.</p></li>
+<li><p>El efecto del refuerzo es cambiar la distribución del comportamiento.</p></li>
+<li><p>El efecto del refuerzo depende del contexto de otros refuerzos presentes, incluyendo los refuerzos no medidos directamente.</p></li>
+<li><p>La regla que gobierna la distribución del comportamiento es la igualación de la frecuencia relativa de la respuesta a la tasa relativa de refuerzo con la que ésta se encuentra asociada.</p></li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./Capítulo 7.html" class="pagination-link" aria-label="El Modelo de Rescorla y Wagner">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">El Modelo de Rescorla y Wagner</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Capítulo 9.html" class="pagination-link" aria-label="Elección Recurrente: Igualación">
+        <span class="nav-page-text"><span class="chapter-title">Elección Recurrente: Igualación</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+<p>Acerca</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+<p>Libro Apoyado por los Proyectos <a href="https://dgapa.unam.mx/index.php/fortalecimiento-a-la-docencia/papime">PAPIME</a> PE309624 y PE302221</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/arbouria/Notas-Aprendizaje-y-Comportamiento-Adaptable-I/edit/main/Capítulo 8.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

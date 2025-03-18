@@ -15,7 +15,9 @@ Un ejemplo adicional lo proporciona el forrajeo de una abeja que enfrenta dos di
 
 La forma más sencilla de estudiar experimentalmente protocolos de elección recurrente se desarrolló en el laboratorio de Skinner y se conoce como *programas de refuerzo concurrentes*. El protocolo consiste en presentarle a un organismo dos o más opciones de respuesta -teclas iluminadas en el caso de las palomas- que se encuentran disponibles todo el tiempo y que siguen programas individuales e independientes de refuerzo. (Figura). En estas notas, revisaremos los resultados obtenidos en el estado de equilibrio, una vez que los agentes han aprendido acerca de las consecuencias de cada opción de respuesta. La variable que se estudia es la distribución de respuestas o tiempos asignados.
 
-$$\frac{R_1} {(R_1 +R_2)}$$
+$$
+\frac{R_1} {(R_1 +R_2)}
+$$
 
 
 imagen
@@ -34,7 +36,9 @@ reportó los resultados del primer estudio con programas concurrentes, en el que
 
 Herrnstein encontró que en éstos programas la tasa relativa de respuestas (su proporción) iguala la tasa relativa de reforzadores obtenidos:
 
-$$\frac {R_1} {(R_1 + R_2)} = \frac {r_1} {(r_1 + r_2)}$$
+$$
+\frac {R_1} {(R_1 + R_2)} = \frac {r_1} {(r_1 + r_2)}
+$$
 
 El resultado es muy robusto y se ha reportado en un sinnúmero de especies. A esta relación entre tasas relativas de respuesta y refuerzo se le conoce como la *ley de igualación* y en la última década del siglo pasado fue la ley más citada en la literatura psicológica. En la siguiente figura pueden verse los resultados de tres palomas: cada punto representa los datos de los últimos cinco días para cada par de valores de los programas de intervalo variable. La proporción de respuestas (tasas relativas) va de cero a uno. (Figura). 
 
@@ -44,7 +48,9 @@ Igualación sería un resultado trivial, si por cada refuerzo hubiese solo una r
 
  Una forma más directa de estudiar la relación entre patrones de respuesta y patrones de refuerzo en protocolos de elección recurrente, es estudiando el **tiempo** asignado por los organismos a las diferentes opciones de refuerzo, en lugar de estudiar el número de respuestas discretas asignadas a las distintas opciones. Desde este enfoque, Rachlin y Baum estudiaron el comportamiento de las palomas: para ello, emplearon un espacio rectangular con un piso conectado a interruptores que permite medir el tiempo que una paloma pasa en cada lado del espacio rectangular. En cada uno de los dos extremos del espacio experimental había un comedero que asignaba comida de acuerdo a programas independientes de refuerzo de intervalo variable. En este experimento también se encontró que el tiempo relativo asignado por el organismo a un lugar iguala el refuerzo relativo obtenido en dicho lugar.
 
-$$\frac {T_1} {(T_1 + T_2)} = \frac {r_1} {(r_1 + r_2)}$$
+$$
+\frac {T_1} {(T_1 + T_2)} = \frac {r_1} {(r_1 + r_2)}
+$$
 
 ## Desviaciones de Igualación
 
@@ -66,17 +72,23 @@ imagen
 Para modelar el sesgo y la sensibilidad, Baum propuso una extensión de la ley de igualación que se conoce como la *Ley Generalizada de Igualación* y que captura las dos clases de desviaciones revisadas en la sección anterior.
 Primero propuso expresar la ley en términos de razones entre las distintas respuestas y los distintos refuerzos; y no de proporción entre una respuesta y el total de las respuestas o entre un refuerzo y el total de los refuerzos:
 
-$$\frac {R_1} {R_2} = \frac {r_1} {r_2}$$
+$$
+\frac {R_1} {R_2} = \frac {r_1} {r_2}
+$$
 
 Como un segundo paso, Baum propuso que la razón de refuerzo es transformada por el agente, como una función de potencia con dos parámetros, similar a la propuesta por S. S. Stevens (AÑO) en la psicofísica sensorial. 
 
-$$ \frac{R_1}{R_2} = \alpha \left( \frac{r_1}{ r_2} \right)^\beta$$
+$$
+\frac{R_1}{R_2} = \alpha \left( \frac{r_1}{ r_2} \right)^\beta
+$$
 
 Donde el parámetro $\beta$ representa que tan *sensible* es la razón de respuesta a los cambios en la razón de refuerzos y el parámetro $\alpha$ representa el *sesgo** en la preferencia por una alternativa sobre otra.
 
 Una forma, visualmente más clara de ver la ecuación anterior, es su transformación logarítmica:
 
-$$\log \frac{B_1}{B_2} = \beta \log\frac{r_1}{r_2} + \log \alpha$$
+$$
+\log \frac{B_1}{B_2} = \beta \log\frac{r_1}{r_2} + \log \alpha
+$$
 
 En la figura x podemos ver su comportamiento y en el simulador uds. pueden jugar con diferentes valores de los parámetros de sesgo y sensibilidad. Podemos ver que bajo la transformación logarítmica, la ecuación de potencia se convierte en una familia de líneas rectas en las que $\beta$ es la pendiente de la función y $\alpha$ es su intercepto. Cuando la sensibilidad es igual a uno y no hay sesgo (es decir, $\alpha$  = 0), la ecuación es la ley de igualación y la línea recta parte del origen. Los valores de $\alpha$ positivos o negativos generan líneas rectas paralelas a la recta de igualación. Los valores del parámetro de sensibilidad $\beta$ menores a uno representan sub-igualación y los valores mayores a uno representan sobre-igualación. En el primer caso, la importancia de la diferencia entre los refuerzos se empequeñece psicológicamente y en el segundo caso la misma diferencia se agranda.
 
@@ -84,20 +96,26 @@ imagen
 
 En el marco de referencia de los modelos de elección basados en el valor de las consecuencias, la ecuación generalizada de igualación resulta ser una instancia de una regla de respuesta en la que la probabilidad de cada respuesta es una función de la diferencia entre reforzadores:
 
-$$P(a_1)= F(\lambda(Qa_1 -Qa_2))$$
+$$
+P(a_1)= F(\lambda(Qa_1 -Qa_2))
+$$
 
-En nuestro caso, el parámetro $\beta$ es $\lambda$ y la función $\F$ es una función logística aplicada a la diferencia de los logaritmos de los dos refuerzos:
+En nuestro caso, el parámetro $\beta$ es $\lambda$ y la función $F$ es una función logística aplicada a la diferencia de los logaritmos de los dos refuerzos:
 
-$$\log \frac{R_1}{R_2} = \beta (\log{r_1} - log{r_2}) + \log \alpha$$
+$$
+\log \frac{R_1}{R_2} = \beta (\log{r_1} - \log{r_2}) + \log \alpha
+$$
 
-La ecuación generalizada de igualación puede emplearse para distintos usos: ya sea evaluar la preferencia entre diferentes refuerzos (representada por el valor del parámetro alfa); investigar bajo qué condiciones se obtiene igualación perfecta, es decir, cuando  $\alfa = 1$ y $\beta = 1$; o finalmente, establecer la forma en la que las diferencias en refuerzo son transformadas en distintas distribuciones del comportamiento. El parámetro $\beta$ puede interpretarse en al menos dos formas, primero como una propiedad del sistema: de la misma forma que el exponente para las funciones psicofísicas varía dependiendo de la dimensión sensorial, la sensibilidad beta podría variar dependiendo del tipo de refuerzo. En segundo lugar, beta también puede interpretarse como el resultado de un conjunto de manipulaciones experimentales y restricciones perceptuales del sistema que imponen límites en la discriminabilidad de las diferencias de refuerzos. Para dar un ejemplo de estas dos interpretaciones plausibles ante un único fenómeno de discriminación: consideremos la diferencia en el refuerzo que generan dos sabores placenteros distintos, esta diferencia es mucho más fácil de distinguir que aquella los refuerzos que otorgan dos sonidos melódicos distintos. Esta diferencia en la facilidad o dificultad para discriminar entre dos estímulos podría deberse a una propiedad intrínseca de los sabores como fenómeno respecto a los sonidos (interpretación 1), aunque también podría deberse a que nuestro sistema sensorial (el sistema sensorial humano) tiene una mayor facilidad para distinguir refuerzos por vía de la modalidad gustativa que por vía de la modalidad auditiva (interpretación 2). La segunda interpretación sugiere que esta dificultad discriminativa podría no presentarse en otras especies con sistemas sensoriales distintos, por ejemplo, en los murciélagos, que poseen sistemas auditivos más agudos que nosotros.
+La ecuación generalizada de igualación puede emplearse para distintos usos: ya sea evaluar la preferencia entre diferentes refuerzos (representada por el valor del parámetro alfa); investigar bajo qué condiciones se obtiene igualación perfecta, es decir, cuando $\alpha = 1$ y $\beta = 1$ o finalmente, establecer la forma en la que las diferencias en refuerzo son transformadas en distintas distribuciones del comportamiento. El parámetro $\beta$ puede interpretarse en al menos dos formas, primero como una propiedad del sistema: de la misma forma que el exponente para las funciones psicofísicas varía dependiendo de la dimensión sensorial, la sensibilidad beta podría variar dependiendo del tipo de refuerzo. En segundo lugar, beta también puede interpretarse como el resultado de un conjunto de manipulaciones experimentales y restricciones perceptuales del sistema que imponen límites en la discriminabilidad de las diferencias de refuerzos. Para dar un ejemplo de estas dos interpretaciones plausibles ante un único fenómeno de discriminación: consideremos la diferencia en el refuerzo que generan dos sabores placenteros distintos, esta diferencia es mucho más fácil de distinguir que aquella los refuerzos que otorgan dos sonidos melódicos distintos. Esta diferencia en la facilidad o dificultad para discriminar entre dos estímulos podría deberse a una propiedad intrínseca de los sabores como fenómeno respecto a los sonidos (interpretación 1), aunque también podría deberse a que nuestro sistema sensorial (el sistema sensorial humano) tiene una mayor facilidad para distinguir refuerzos por vía de la modalidad gustativa que por vía de la modalidad auditiva (interpretación 2). La segunda interpretación sugiere que esta dificultad discriminativa podría no presentarse en otras especies con sistemas sensoriales distintos, por ejemplo, en los murciélagos, que poseen sistemas auditivos más agudos que nosotros.
 
 
 ### Igualación como un Mecanismo Adaptable
 
 Una respuesta común al principio de igualación es considerarlo como una instancia de un mecanismo de adaptación, seleccionado para maximizar el total de refuerzos disponibles. Para atender esta posibilidad, es necesario conocer la función que relaciona, por un lado, a la suma del total de los refuerzos, y por el otro, a las distribuciones relativas de respuesta. Con ello, se puede evaluar si el patrón de respuesta de igualación corresponde al máximo de la función. 
 
-$$r_{total}= f\left(\frac{R_1}{R_1 + R_2}\right)$$
+$$
+r_{total}= f\left(\frac{R_1}{R_1 + R_2}\right)
+$$
 
 
 Dado que en programas de IV los refuerzos no se cancelan hasta que se obtienen, al animal le conviene seguir visitando ambas opciones y de esa forma obtener todos los reforzadores posibles. Sin embargo, el número de posibles distribuciones de respuestas que garantizarían obtener todos los refuerzos es enorme. El organismo podría hacerlo simplemente alternando constantemente cada respuesta (0.5) o pasando casi todo el tiempo en una de las opciones con una ocasional visita a la opción no atendida. Lo sorprendente es que dentro de ese amplio rango de posibles tasas relativas de respuesta que producen maximización, lo que se observa empíricamente es la proporción de respuesta a cada opción que iguala la tasa de refuerzo relativa. La importancia de la igualación es que representa la solución observada, en equilibrio, a la multiplicidad de formas de maximizar el refuerzo total en programas concurrentes de intervalo variable.
@@ -112,12 +130,19 @@ Otra explicación que puede dar cuenta del patrón de respuesta de igualación e
 En concreto, bajo este modelo computacional, el organismo en esencia registra la tasa de refuerzo asociada con cada opción de respuesta disponible y luego distribuye sus respuestas proporcionalmente en cada opción para igualar las rentabilidades.
 Igualación para respuestas y tiempos también puede expresarse en forma de razones, esto es, en lugar de hablar de una frecuencia relativa de 6 de 8 (0.75) refuerzos para una respuesta, hablamos de una razón de 6 a 2 (3) refuerzos para esa respuesta:
 
-$$\frac {T_1} {T_2} = \frac {r_1} {r_2}$$; 
-$$\frac {R_1} {R_2} = \frac {r_1} {r_2}$$
+$$
+\frac {T_1} {T_2} = \frac {r_1} {r_2}
+$$
+
+$$
+\frac {R_1} {R_2} = \frac {r_1} {r_2}
+$$
 
 Reacomodando términos:
 
-$$\frac {r_1}{T_1} = \frac {r_2} {T_2}$$   ; $$\frac {r_1}{R_1} = \frac {r_2} {R_2}$$
+$$
+\frac {r_1}{T_1} = \frac {r_2} {T_2} \text{ y } \frac {r_1}{R_1} = \frac {r_2} {R_2}
+$$
 
 Esta nueva forma de expresar la ley de igualación refleja que lo que se iguala es la rentabilidad de las distintas opciones de respuesta y/o tiempo. De este modo, lo que los organismos igualan son lo que podemos llamar como *tasas locales de refuerzo*. Así, cuando un organismo sigue la ley de igualación, este experimentará tasas iguales de reforzamiento local en todas las opciones disponibles. Es decir, si el organismo recibe un reforzador por cada 30 respuestas a la Opción A, este ajustará su número de respuestas a la Opción B para igualar la tasa de reforzamiento local de un reforzador por cada 30 respuestas. De manera similar, si el organismo recibe un reforzador por cada 30 segundos dedicados a la Opción A, este ajustará sus respuestas para recibir un reforzador por cada 30 segundos dedicados a la Opción B.
 

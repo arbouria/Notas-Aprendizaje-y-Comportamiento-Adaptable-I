@@ -103,8 +103,6 @@ Contrario a la predicción de indiferencia arrojada por el modelo de refuerzo *Q
 Los resultados anteriores son consistentes con la siguiente interpretación más local de la ejecución en programas concurrentes. La interpretación consiste en suponer que en estos programas lo que el animal aprende es el tiempo que debe pasar en una opción antes de cambiar a otra alternativa. Suponemos que estos tiempos se encuentran relacionados linealmente a la tasa de refuerzo en la tecla alternativa: así, mientras más pobre es el programa alterno, mayor será el tiempo que el organismo pasará en una alternativa. De esa forma, en la prueba de Belke, la preferencia por el “IV 40 que fue entrenado con el IV 80” respecto al “mismo IV 40 que fue entrenado con el IV 20” se explica porque en el primer programa concurrente (Componente B), el organismo aprendió que debía pasar más tiempo por visita en la opción IV 40, mientras que en el segundo programa (Componente A), este aprendió que debía pasar menos tiempo por visita en la opción IV 40. 
 
 
-
-
 ## Reflexiones Finales Sobre los Modelos de Elección Basados en Valor
 
 * La igualación de tasas relativas de respuesta a tasas relativas de refuerzo es un fenómeno muy robusto.

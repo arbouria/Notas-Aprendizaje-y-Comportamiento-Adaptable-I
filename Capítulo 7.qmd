@@ -64,7 +64,7 @@ Para ayudar a entender el modelo de Rescorla y Wagner en su aplicación a la vid
 
 Considere el protocolo experimental mostrado en la figura x. Hay tres grupos, para el grupo G1 en cada ensayo se presenta un compuesto de dos estímulos (tono y luz) seguidos por el acceso a alimento. Para otros dos grupos solo se les presenta el tono o la luz, cada uno seguido de comida. Vamos a suponer que el tono y la luz no son igualmente sobresalientes (es decir, tienen betas diferentes). Para el grupo G1, el error de predicción es R menos la suma del valor adquirido en cada ensayo por los elementos del compuesto, para el cual: Vtotal =  Vluz + VTono. Para los otros dos grupos, el error de predicción es R menos el valor de cada elemento por separado, VT o VL. En la simulación puede verse que cuando se tiene un tono ligeramente más sobresaliente que la luz en el grupo con el estímulo compuesto, ni el tono ni la luz alcanzan valores cercanos a R. En los grupos en los cuales los dos estímulos se presentan por separado, ambos estímulos alcanzan valores que se aproximan a 1, el valor de R.
 
-![](DraggedImage.png)
+imagen
 
 ### Aplicación del modelo de Rescorla y Wagner al experimento de bloqueo
 
@@ -75,13 +75,13 @@ VL+1 = VL + a (R - Vtotal) = 0 + a (1 - 1) = 0
 
 Vemos que no se le asigna valor al elemento luz. En resumen, cuando el elemento de un compuesto ya predice la presentación del refuerzo, el otro elemento del compuesto no adquiere valor predictivo, tal y como puede verse en el resultado de la simulación presentada en la Figura x.
 
-![](DraggedImage-1.png)
+imagen
 
 #### Predicción contraintuitiva del modelo de Rescorla y Wagner
 
 Cualquier versión del modelo de refuerzo predice que un refuerzo adicional debe incrementar, aunque sea por un monto muy pequeño, el valor predictivo de un estímulo. Sin embargo, veamos qué predice el modelo de Rescorla y Wagner en el siguiente protocolo. A un grupo lo exponemos a tres fases de entrenamiento. En la primera fase, un tono es seguido de comida durante 60 ensayos. En una segunda fase, una luz es el estímulo condicionado y es seguida de comida durante otros 60 ensayos. En la tercera fase, la final, a los sujetos experimentales se les presenta el compuesto tono-luz, seguido de comida durante 60 ensayos. Al inicio de la tercera fase, VL = R; VT = R y Vtotal = 2R, de tal forma que el error de predicción para ambos estímulos, será R - 2R, por lo que Vt+1 será un número negativo y veremos un decremento en el valor predictivo para los dos estímulos. Interesantemente, se ha encontrado evidencia empírica que respalda esta predicción contraintuitiva del modelo. La siguiente figura muestra el resultado de la simulación.
 
-![](DraggedImage-2.png)
+imagen
 
 #### Aplicación del modelo de Rescorla y Wagner a estudios de protocolos de correlaciones
 
@@ -105,14 +105,14 @@ La segunda razón que dificulta el estudio de la inhibición condicionada es la 
 
 En un primer protocolo, conocido como de *sumación*, se compara, por un lado, la respuesta a un estímulo condicionado A con valor positivo presentado individualmente; con, por otra parte, la respuesta ante un compuesto del estímulo A acompañado de un estímulo X. Nuestro objetivo es determinar si X es un inhibidor condicionado. Si la respuesta al compuesto AX es menor u opuesta a la respuesta observada ante el estímulo A presentado individualmente, podríamos concluir que el estímulo X es un inhibidor condicionado. Regresando a nuestro ejemplo, podemos argumentar que la pareja del paseador de perro es un inhibidor condicionado, si el perro no gruñe cuando la pareja acompaña al paseador y sí gruñe cuando este va acompañado únicamente de su paseador. Sin embargo, Rescorla señala que estos resultados tienen una segunda interpretación: es posible que la atención dirigida al estímulo X (la pareja) reduzca la atención dirigida al estímulo A (el paseador) resultando en la menor respuesta al perro. En resumen, X no sería un predictor de la ausencia de gruñido (no sería un inhibidor condicionado), simplemente, X contribuiría a que se ignore a A. Las siguientes dos figuras muestran el protocolo de sumación y el resultado de una simulación.
 
-![](DraggedImage-3.png)
 
-![](DraggedImage-4.png)
+IMAGENES
 
 
 De acuerdo a Rescorla, para descartar la interpretación alternativa del protocolo de sumación en términos de atención se requiere de una prueba adicional. A esta se le conoce como *prueba de retardo* y consiste en comparar la curva de adquisición de valor predictivo de un estímulo neutral A presentado individualmente, con la presentación -también individual- de un estímulo X que se entrenó como un inhibitorio y que tiene un valor negativo. Si el aprendizaje es más lento para el segundo estímulo X, podríamos concluir que este se trata de un estímulo inhibitorio. La figura x muestra los resultados de la simulación con este protocolo.
 
-![](DraggedImage-5.png)
+IMAGEN
+
 
 Sin embargo, otra posible explicación de los resultados de la prueba de retardo  hace también referencia a procesos de atención. Es posible que por el entrenamiento previo, el estímulo X deje de activar los procesos de atención y que por lo tanto la demora en el aprendizaje de su valor predictivo se deba a la falta de atención que este recibe en comparación con la atención que recibe el estímulo novedoso neutral. Sin embargo, noten que en el protocolo de sumación, la explicación alternativa para dar cuenta de una menor respuesta del organismo ante el estímulo compuesto (X+EC) era una mayor atención otorgada al estímulo X, el cual desviaba la atención del estímulo EC; mientras tanto, en el protocolo de retardo, la explicación alternativa para dar cuenta de la menor respuesta ante el estímulo X es una menor atención asignada al estímulo X debido a la familiaridad con este estímulo. Por lo tanto, Rescorla propone que para concluir que un estímulo/respuesta es un inhibidor, este debe pasar tanto la prueba de sumación como la de retardo. No resulta plausible que un estimulo reciba menos atención en una circunstancia y el mismo reciba mayor atención en la otra circunstancia: por lo cual, si el estímulo actúa como inhibidor en ambas circunstancias, esto significa que su efecto no se debe a meros procesos atencionales de novedad/habituación, sino que efectivamente, el organismo considera a este estímulo como un predictor de la ausencia de un SBI. En otras palabras, dado que la variable de atención tiene efectos contrarios en las dos pruebas: al encontrar un estímulo que pasa ambas pruebas, se eliminan las explicaciones alternativas de más y de menor atención, y se puede considerar a este estímulo como un inhibidor condicionado.
 
