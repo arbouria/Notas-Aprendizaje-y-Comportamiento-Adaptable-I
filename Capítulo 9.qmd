@@ -7,7 +7,7 @@ Consideren las siguientes situaciones: a un agente se le presentan dos bolsas, y
 
 Consideren ahora un experimento similar: en lugar de informar al agente acerca del contenido de las bolsas en un inicio, a este se le presentan las opciones como bolsas cerradas, y a través de múltiples iteraciones, el agente tiene que explorar y **aprender** acerca de los montos de dinero de las distintas bolsas o de la calidad de las distintas opciones ofrecidas por el restaurante. La presentación recurrente de las oportunidades de elección crea nuevos problemas de adaptación para el agente. Como vimos en las notas anteriores, el agente debe resolver el dilema de exploración - explotación y debe determinar si las consecuencias de las opciones cambian como una función de las elecciones y el paso del tiempo, o si estas son fijas e independientes de las elecciones y del tiempo. En un ejemplo no ya de una elección entre varios platillos de un restaurante sino de una elección entre acudir a uno de varios restaurantes, el agente debe visitar los distintos locales un buen número de veces antes de tomar la decisión de pasar a explotar uno. Sin embargo, aún tras haber estimado la opción con mayor valor y haber comenzado a explotar una opción elegida, el agente debe mantener cierta flexibilidad para modificar su elección, en aras de poder determinar si la calidad de los restaurantes varía aleatoriamente con el paso del tiempo (debido a factores como los cambios de cocinero, por ejemplo). En estos casos, la regla de elegir la opción que instantáneamente tiene más valor no es la que a largo plazo proporciona la mayor cantidad de refuerzos. En los experimentos con estos protocolos observamos una regla de respuesta probabilística.
 
-### Elección Recurrente
+## Elección Recurrente
 
 Fuera del laboratorio, lo común para los humanos y para muchas otras especies son situaciones en las cuales los individuos pueden elegir entre dos o más acciones o parcelas de forma repetida y continua, y en las cuales las elecciones alteran las opciones futuras de refuerzo. Estos problemas de adaptación son ejemplos de sistemas de retroalimentación cerrados y, siguiendo a Gallistel, les llamamos *problemas de asignación* de respuestas, tiempo o esfuerzo. Un estudiante a lo largo del día va asignando su tiempo a diferentes actividades: desayunar, transportarse, pasar tiempo en el salón de clases, estudiar en la biblioteca, conversar con amistades, ver a su pareja, ejercitarse. Al final del día, habrá una distribución de tiempos asignados a las diferentes actividades. Resulta importante considerar que cada una de estas actividades es en sí otro espacio de posibles acciones a las que se les puede dedicar tiempo. Por ejemplo, cuando están en el salón de clases, pueden atender lo que presenta el profesor o pueden ver las noticias en su celular, mandar un WA o fantasear. De esta forma, podemos estudiar problemas de asignación a diferentes escalas temporales, pero todas bajo el mismo esquema.  
 
@@ -26,7 +26,7 @@ imagen
 En los estudios que reportamos, el animal es expuesto a un par de programas de refuerzo dentro de sesiones diarias hasta que la distribución de respuestas a las distintas opciones disponibles se vuelve estable y deja de cambiar día con día. Esto toma entre 30 y 45 días. Esta rutina se repite para todos los pares de programas que se están estudiando. De cada par, se usan para el análisis los últimos cinco días en los que las elecciones son estables.
 
 
-### La Ley de Igualación
+## La Ley de Igualación
 
 En 1961, Richard Herrnstein (ver foto)
 
@@ -52,7 +52,7 @@ $$
 \frac {T_1} {(T_1 + T_2)} = \frac {r_1} {(r_1 + r_2)}
 $$
 
-## Desviaciones de Igualación
+### Desviaciones de Igualación
 
 La igualación de las tasas relativas de respuesta al valor de las tasas relativas de refuerzo es un fenómeno muy robusto cuando ambas opciones de respuesta son reforzadas de acuerdo a programas de intervalo variable, sin embargo, se han encontrado desviaciones respecto al patrón de igualación cuando uno de los programas de refuerzo se cambio a otra regla, o cuando se establecen distintos  tipos de reforzadores para las dos respuestas. Baum () reconoció dos tipos de desviaciones de igualación: 
 Introducir el ejemplo de “ver Salir a alguien con una cantidad de frijoles de diferente tipo”. ¿Es el resultado de preferencias o de precios?
@@ -120,11 +120,11 @@ $$
 
 Dado que en programas de IV los refuerzos no se cancelan hasta que se obtienen, al animal le conviene seguir visitando ambas opciones y de esa forma obtener todos los reforzadores posibles. Sin embargo, el número de posibles distribuciones de respuestas que garantizarían obtener todos los refuerzos es enorme. El organismo podría hacerlo simplemente alternando constantemente cada respuesta (0.5) o pasando casi todo el tiempo en una de las opciones con una ocasional visita a la opción no atendida. Lo sorprendente es que dentro de ese amplio rango de posibles tasas relativas de respuesta que producen maximización, lo que se observa empíricamente es la proporción de respuesta a cada opción que iguala la tasa de refuerzo relativa. La importancia de la igualación es que representa la solución observada, en equilibrio, a la multiplicidad de formas de maximizar el refuerzo total en programas concurrentes de intervalo variable.
 
-### ¿Es Maximización el Mecanismo que Subyace a Igualación?
+#### ¿Es Maximización el Mecanismo que Subyace a Igualación?
 
 Una pregunta muy diferente a la de si la igualación es un comportamiento adaptable es la de si, bajo condiciones de equilibrio, la maximización de la tasa de reforzamiento global es el “mecanismo” que guía el comportamiento del organismo y el cual subyace al patrón de respuestas observado en igualación. En otras notas veremos modelos en los que se maximizan diferentes variables, pero en estas nos concentramos en la maximización del número de refuerzos totales. Para comprender la pregunta, es necesario considerar que los fenómenos de maximización e igualación implican que los algoritmos que los organismos computan son diferentes para cada modelo. De acuerdo a esta versión de la maximización como mecanismo subyacente a la igualación, el algoritmo no distingue entre las dos respuestas disponibles y el refuerzo asociado con cada una de ellas: en lugar de ello, este solo computa y actualiza dos variables, la suma de refuerzos y la tasa relativa de respuestas. Noten que, debido a esto último, este modelo de acción no es una instancia de un modelo de elección basado en el valor de las respuestas individuales. En cambio, este modelo asume que los organismos cuentan con solo dos contadores, uno para la tasa relativa de respuestas y otro para la suma de los reforzadores obtenidos por las dos respuestas, sin distinguir entre su origen. Un reloj acumula el tiempo total *T*,  durante el cual las dos respuestas se encuentran disponibles. El resultado del contador del total de refuerzos se divide entre el tiempo T. En estos casos, el organismo busca acceder al mayor número de refuerzos por unidad de tiempo. Este número de {r/T} representa la *ganancia* asociada con cada distribución posible de respuestas. Además, dentro de un proceso de ascenso de colina, como el visto en las notas x, la tasa relativa de respuesta se mueve en la dirección de una mayor tasa global de refuerzo hasta alcanzar un máximo, el cual puede ser local. 
 
-### Igualación y Rentabilidad de las Respuestas
+#### Igualación y Rentabilidad de las Respuestas
 
 Otra explicación que puede dar cuenta del patrón de respuesta de igualación es que los organismos buscan igualar la rentabilidad de sus respuestas o tiempos. La rentabilidad es el número de refuerzos que se obtienen por tiempo o respuestas invertidos en una opción. Cuando ustedes deciden entre planes de ahorro bancario, la primera pregunta que hacen es cuál es la tasa de interés anual, lo que les permite saber cuánto ganarán anualmente por cada $1,000 pesos depositados en su cuenta. Igualación sugiere que esto es exactamente lo que hacen los agentes con la asignación de sus respuestas y tiempos: específicamente, igualación plantea que la regla que siguen los agentes es distribuir sus respuestas y tiempos de tal forma que, en equilibrio, las dos opciones tengan la misma rentabilidad. 
 En concreto, bajo este modelo computacional, el organismo en esencia registra la tasa de refuerzo asociada con cada opción de respuesta disponible y luego distribuye sus respuestas proporcionalmente en cada opción para igualar las rentabilidades.
@@ -162,7 +162,7 @@ Computacionalmente, considerar que el algoritmo de igualación opera dentro de p
 
 Aqui falta el ejemplo numerico.
 
-### Maximización vs Rentabilidad
+#### Maximización vs Rentabilidad
 
 ¿Es posible distinguir entre estas dos interpretaciones de la elección en programas concurrentes? Consideren el siguiente escenario. Una estudiante es la única heredera de dos tías de edad avanzada. El monto de la herencia que le deja una de ellas depende del número de visitas que la sobrina le haga; por otra parte, la cantidad que le deja la otra tía tiene un tope máximo y solo depende de que ella la visite ocasionalmente. El escenario de las tías ilustra un programa concurrente, con una de las opciones reforzada con un programa de intervalo variable y la otra con un programa de razón variable. En este escenario, la estrategia óptima de la sobrina es asignar la mayor parte de sus visitas a la tía más demandante, la que ejemplifica un programa de razón, y visitar ocasionalmente a la tía que ejemplifica el programa de intervalo. 
 

@@ -59,11 +59,15 @@ El modelo de mejoramiento de Herrnstein y Vaughan () describe la dinámica de el
 
 Para el modelo de mejoramiento, la variable de decisión son las tasas locales de refuerzo, a las cuales previamente llamamos como la rentabilidad de las opciones. Esta variable se computa dividiendo el número de refuerzos para cada opción entre el tiempo asignado a cada una de ellas:
 
-$$\frac {r_i}{T_i}$$
+$$
+\frac {r_i}{T_i}
+$$
 
 La rentabilidad puede computarse también para respuestas:
 
-$$\frac {r_i}{R_i}$$
+$$
+\frac {r_i}{R_i}
+$$
 
 Asumiendo un tiempo total fijo, de acuerdo al modelo de mejoramiento, cada incremento en una unidad de tiempo asignada a una opción tiene como consecuencia la actualización de las dos tasas de refuerzo locales. Al incrementar el tiempo asignado $t_i$ a una de las opciones, la tasa local de refuerzo de esa opción disminuye (dado que el denominador de la rentabilidad de esa opción crece); simultáneamente, este cambio también reduce el tiempo $t_2$ asignado a la otra opción (dado que el tiempo total es fijo), lo cual incrementa la tasa de refuerzo local asociada con la segunda opción (puesto que el denominador de esta segunda rentabilidad se achica).  
 
@@ -94,7 +98,7 @@ Opción B: reforzada con intervalo variable IV(b)
 Programa concurrente 2: El animal puede elegir entre:
 Opción A: reforzada con el mismo intervalo variable IV(a) que en la Situación 1
 Opción B': reforzada con un intervalo variable IV(b') diferente al de la Situación 1
-Posteriormente, se evalúa la preferencia del animal entre las opciones A de ambos programas concurrentes, las cuales comparten exactamente el mismo valor de reforzamiento (Q). Bajo este protocolo, cada par de opciones (cada componente o programa concurrente) se encuentra vigente en períodos de tiempo separados dentro de una misma sesión (formalmente a este arreglo se le conoce como programas múltiples de refuerzo). Una vez alcanzado el equilibrio en cada programa concurrente IV - IV: se presenta una nueva combinación de las opciones comunes a ambos programas. De acuerdo a los modelos de refuerzo, de mejoramiento y de valor Q, la elección en los periodos de prueba debe reflejar los valores adquiridos por cada opción individual.
+Posteriormente, se evalúa la preferencia del animal entre las opciones A de ambos programas concurrentes, las cuales comparten exactamente el mismo valor de reforzamiento (Q). Bajo este protocolo, cada par de opciones (cada componente o programa concurrente) se encuentra vigente en períodos de tiempo separados dentro de una misma sesión (formalmente a este arreglo se le conoce como programas múltiples de refuerzo). Una vez alcanzado el equilibrio en cada programa concurrente IV - IV: se presenta una nueva combinación de las opciones comunes a ambos programas. De acuerdo a los modelos de refuerzo, de mejoramiento y de valor $Q$, la elección en los periodos de prueba debe reflejar los valores adquiridos por cada opción individual.
 
 Belke () corrió una versión de este protocolo. Para uno de los componentes de programas concurrentes (Componente A), los valores de las opciones eran Tecla Blanca (IV 20) vs Tecla Roja (IV 40), mientras que para el otro programa concurrente (el Componente B), las opciones eran Tecla Verde con IV 40 vs una Tecla Amarilla con IV 80. Así, para el Componente A, la opción del IV 40 ocurría en el contexto de una opción IV 20 (la Tecla Roja) que era dos veces más rica. Mientras tanto, para el segundo par de estímulos (el Componente B), la opción IV 40 (la Tecla Verde) se presentaba en el contexto de otra opción reforzada con un IV 80 (la Tecla Amarilla), la cual era dos veces menos rica. De acuerdo al modelo *Q* que no considera el contexto de los reforzadores, las dos opciones de respuesta reforzadas con el IV 40 (las Teclas Roja y Verde) en ambos programas deben tener el mismo valor. Sin embargo, otra posibilidad es que el valor adquirido por una opción de respuesta dependa del contexto de los refuerzos proporcionados a las respuestas alternativas presentes. En este caso, la Tecla Verde reforzada con el IV 40 dentro del contexto de otra opción reforzada con un IV pobre, adquiere un valor más grande que la Tecla Roja, también reforzada con un IV 40 pero que fue entrenada previamente en un contexto con una opción reforzada con un IV más rico. 
 

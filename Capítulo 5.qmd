@@ -26,7 +26,7 @@ Gibbon et al. llevaron a cabo justo ese protocolo con ratas para evaluar la impo
 
 Lo anterior indica que los organismos son sensibles a la razón TEE/TEC: si esta razón rebasa un valor, el animal aprende acerca de la importancia del EC. Una forma de entenderlo es suponer que el EC reduce la incertidumbre acerca del momento de ocurrencia de un refuerzo: mientras la razón TEE/TEC sea más grande, mayor es la reducción en la incertidumbre de la entrega. En otras palabras, la asignación de crédito a un estímulo o respuesta depende de que el estímulo condicionado sea breve relativo al intervalo entre las presentaciones del refuerzo. En nuestro ejemplo hipotético, el obrero de la fábrica aprenderá acerca de la señal de 10 minutos que ocurre cada 4 horas, y no de la señal de 3 horas y media de duración.
 
-Conclusiones
+## Conclusiones
 
 Adicionalmente a las limitaciones ya señaladas sobre el papel de la contigüidad en la selección de estímulos/respuestas candidato, cabe agregar las siguientes observaciones: 
 

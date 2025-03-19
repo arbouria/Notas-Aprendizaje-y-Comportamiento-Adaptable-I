@@ -24,7 +24,9 @@ En la siguiente figura se muestran los resultados del estudio de Catania y Reyno
 ### Relación Entre Tasas Absolutas y Relativas de Respuesta
 
 Para Herrnstein (1970) fue claro que cualquier función que relacione la tasa de respuesta (como valor de salida) a la tasa de refuerzo (como valor de entrada) debe satisfacer dos condiciones:
+
 * primero, dar cuenta de la relación obtenida en los programas de intervalo variable cuando hay una sola opción de respuesta disponible para el organismo y
+
 *  segundo, ser consistente con la ley de igualación, cuando hay dos o más opciones de respuesta para el organismo.
 
 Recordemos que para los modelos de refuerzo, los animales no llevan un registro de la frecuencia relativa con la que deben emitir cada respuesta, en lugar de ello, estos modelos postulan que para el organismo cada respuesta adquiere un valor por separado, los cuales subyacen a los patrones de respuesta observados. El valor de cada respuesta varía en función del refuerzo que ésta produce. Por otro lado, la tasa relativa con la que el organismo emite cada respuesta es el resultado de una comparación entre el valor adquirido por cada una de las distintas respuestas. El objetivo, por lo tanto, es encontrar la función que describe la relación entre los tres valores: el valor adquirido por cada respuesta; la tasa con la que el organismo emite cada respuesta; y las tasas de refuerzo que resultan de cada una de las tasas de respuesta:
@@ -58,14 +60,17 @@ $$R_i = kr_i$$
 La ecuación describe una línea recta, donde el parámetro **k** es su pendiente y representa la traducción de un refuerzo en un incremento fijo en la tasa de respuesta. (Puede trabajar con el correspondiente simulador).
 
 Para determinar si esta primera función es consistente con la ley de igualación, insertamos la función en la computación de tasas relativas de respuesta. Asumiendo que el refuerzo es el mismo para las dos opciones, el parámetro **k** se cancela y obtenemos la ecuación de igualación. 
- 
-$$\frac {R_1} {(R_1 + R_2)} = \frac {kr_1} {(kr_1 + kr_2)}$$
+$$
+\frac{R_1}{(R_1 + R_2)} = \frac{kr_1}{(kr_1 + kr_2)}
+$$
 
-La función que postula proporcionalidad entre respuestas y refuerzos es consistente con los resultados presentados en la Fig x. Sin embargo, la función $$R_i = kr_i$$ propone que la tasa de una respuesta depende únicamente del refuerzo que ésta produce. Por lo tanto, la tasa de una respuesta no debería de cambiar cuando su refuerzo es constante y tan solo se manipula otra fuente de refuerzo. Sin embargo, en el panel derecho de la figura x observamos que la tasa de respuesta con el refuerzo constante decrece conforme incrementa el refuerzo para la respuesta alternativa: fenómeno que se conoce como **contraste conductual**.
+La función que postula proporcionalidad entre respuestas y refuerzos es consistente con los resultados presentados en la Fig x. Sin embargo, la función $R_i = kr_i$ propone que la tasa de una respuesta depende únicamente del refuerzo que ésta produce. Por lo tanto, la tasa de una respuesta no debería de cambiar cuando su refuerzo es constante y tan solo se manipula otra fuente de refuerzo. Sin embargo, en el panel derecho de la figura x observamos que la tasa de respuesta con el refuerzo constante decrece conforme incrementa el refuerzo para la respuesta alternativa: fenómeno que se conoce como **contraste conductual**.
 
 La siguiente es una segunda función de respuesta, consistente con el muy replicado resultado de contraste conductual:
 
-$$R_1 = \frac {kr_1} {(r_1 + r_2)}$$
+$$
+R_1 = \frac {kr_1} {(r_1 + r_2)}
+$$
 
 La función nos dice que la tasa de una respuesta es una función de la tasa relativa de refuerzo que recibe esta respuesta. Como puede verse en el simulador, si la tasa de refuerzo $r_2$ para la otra opción es constante, la forma de la función de la tasa de respuesta $R_1$ es de ganancias decrecientes, igual a los datos empíricos reportados en la figura x. Por otra parte, si $r_1$ es constante, conforme incrementa el valor de $r_2$, la tasa de de respuesta $R_1$ decrementa, reproduciendo el patrón de contraste conductual.
 
@@ -76,19 +81,24 @@ Esta función es consistente con el resultado de la ley de igualación. Sustituy
 
 Esta segunda función da cuenta de los resultados obtenidos en programas concurrentes. Sin embargo, veamos qué predice la misma función para experimentos en los que solo se refuerza una de las respuestas, como es el caso de los datos del experimento de Catania y Reynolds. En la ecuación:
 
- $$R_1 = \frac {kr_1} {(r_1 + r_2)}$$
+$$
+R_1 = \frac{kr_1}{(r_1 + r_2)}
+$$
  
-el valor de $r_2$ es cero, pues solo hay una respuesta (r_1) y la ecuación se reduce a
+el valor de $r_2$ es cero, pues solo hay una respuesta ($r_1$) y la ecuación se reduce a
  
-  $$R_1 = \frac {kr_1} {r_1 }$$
+$$
+R_1 = \frac {kr_1} {r_1 }
+$$
   
-Por lo tanto, terminamos con la función: 
-  
-  $$R_1 = k$$
+Por lo tanto, terminamos con la función:   
+$$
+R_1 = k
+$$
   
 la cual nos dice que la tasa de respuesta es una constante y que por ende, la respuesta es insensible a la tasa de refuerzo. Sin embargo, esta conclusión matemática no corresponde a los resultados reportados en la revisión de Villiers y Herrnstein sobre múltiples experimentos similares a los de Catania y Reynolds. En ella, se observa que para protocolos con una única opción de respuesta, dos cosas son ciertas: la tasa de respuesta NO crece linealmente en función de la tasa de refuerzo, contrario a lo que sugiere la primera función de Skinner; y, de igual manera, la tasa de respuesta TAMPOCO es una constante insensible a variaciones en la tasa de refuerzo, contrario a lo que sugiere la segunda función de refuerzo.
 
-### La ley del Efecto Relativa
+## La ley del Efecto Relativa
 
 En un artículo publicado en 1970, Herrnstein propuso una versión de la ley del efecto que simultáneamente daba cuenta de dos de las regularidades empíricas más robustas: la igualación en programas concurrentes y la función de ganancias decrecientes entre tasa de respuesta y la tasa de refuerzo. Propuso un planteamiento que en su momento fue una gran salto: 
 
@@ -104,19 +114,27 @@ $$R_1 +Ro = k$$
 
 3. Los organismos igualan la frecuencia relativa de la respuesta registrada y de todas las otras respuestas con la tasa relativa de refuerzo de todas las respuestas en una situación experimental.
 
-$$\frac{R_1}{R_1 + R_0}= \frac {r_1} {(r_1 + r_o)}$$
+$$
+\frac{R_1}{R_1 + R_0}= \frac {r_1} {(r_1 + r_o)}
+$$
 
-$$R_1+R_0 = k$$
+$$
+R_1+R_0 = k
+$$
 
-$$\frac{R_1}{k}= \frac {r_1} {(r_1 + r_o)}$$
+$$
+\frac{R_1}{k}= \frac {r_1} {(r_1 + r_o)}
+$$
 
-$$R_1= \frac{kr_1} {(r_1 + r_o)}$$
+$$
+R_1= \frac{kr_1} {(r_1 + r_o)}
+$$
 
 Recordemos que $k$ es un parámetro que se estima estadísticamente y representa  la suma de todos los comportamientos medida en unidades $R_1$: frecuentemente respuestas por minuto. El valor de $k$ depende de la topografía (la forma específica) de la respuesta $R_1$ que se mide, así como del tiempo que toma ejecutarla. Picar una tecla es mucho más fácil para una paloma de lo que es apretar una palanca para una rata: como consecuencia, el valor de $k$ es mayor cuando se mide el comportamiento de picar una tecla que cuando se mide el comportamiento de apretar una palanca. 
 
 $r_o$ es un segundo parámetro que se estima estadísticamente y que representa la tasa de otros refuerzos no controlados en el experimento. $r_o$ se mide en las mismas unidades que $r_1$: esto es, el número de refuerzos recibidos por unidad de tiempo.
 
-En el simulador, ustedes pueden ver cómo varía la forma de la función que relaciona la tasa de respuesta a la tasa de refuerzo cuando se varía el valor de $r_o$ dentro de programas de intervalo variable. En general, estos modelos exponen cómo el número de refuerzos por unidad de tiempo generados por una respuesta (dentro de un programa de intervalo variable X) influye sobre la tasa con la que el organismo emite esa respuesta; al mismo tiempo, la tasa de refuerzo que generan las respuestas no controladas (R_o) influye sobre la tasa relativa de la respuesta evaluada (R_1).
+En el simulador, ustedes pueden ver cómo varía la forma de la función que relaciona la tasa de respuesta a la tasa de refuerzo cuando se varía el valor de $r_o$ dentro de programas de intervalo variable. En general, estos modelos exponen cómo el número de refuerzos por unidad de tiempo generados por una respuesta (dentro de un programa de intervalo variable $X$) influye sobre la tasa con la que el organismo emite esa respuesta; al mismo tiempo, la tasa de refuerzo que generan las respuestas no controladas ($R_o$) influye sobre la tasa relativa de la respuesta evaluada ($R_1$).
 
 * La función $R_1$ es de *ganancias decrecientes*, esto es, el impacto de un refuerzo adicional es **mayor** cuando  $r_1$ es pequeño y va **decreciendo** conforme $r_1$ incrementa. Ver figura.
 
@@ -132,7 +150,7 @@ Similarmente, si se desea incrementar un comportamiento, la estrategia sugerida 
 
 En resumen, la ley del efecto relativa, al dirigir el estudio del comportamiento al estudio de la elección, proporciona una novedosa alternativa a las prácticas tradicionales de la modificación de la conducta. En lugar de simplemente eliminar o castigar conductas indeseables, se busca promover alternativas deseables y modificar el contexto de refuerzo para influir en las elecciones del individuo. 
 
-### Evaluación
+#### Evaluación
 
 Empíricamente, la ley del efecto relativo de Herrnstein es enormemente exitosa en su descripción de la relación entre tasa de respuesta y la tasa de refuerzo dentro de programas de intervalo variable (de Villiers y Herrnstein). Sin embargo, la ecuación es algo más que un ejercicio para el ajuste de datos empíricos, esta es el resultado de un conjunto de supuestos teóricos que se reflejan en la interpretación de los dos parámetros de la ecuación $k$ y $r_o$. 
 
@@ -141,7 +159,8 @@ Las siguientes son algunas de las predicciones teóricas del modelo:
 * La suma del total de respuestas, capturada por $k$, debe ser constante e independiente de variables que afecten el valor del refuerzo contingente y el valor de $r_o$, tales como manipulaciones motivacionales y la calidad del refuerzo contingente. En otras palabras, cuando se dan cambios en el valor de los refuerzos, lo que puede cambiar es la frecuencia relativa de las distintas respuestas, pero el número total de respuestas potencialmente realizables por el organismo debe permanecer constante. 
 * Las manipulaciones en el tipo y la magnitud del refuerzo contingente deben ser capturadas por cambios en $r_o$.
 * Agregar otra fuente de refuerzo debe reducir el valor del parámetro $r_o$.
- ### Quedamos de elaborar más/ejemplificar estos últimos puntos.. 
+
+***Quedamos de elaborar más/ejemplificar estos últimos puntos.. ***
 
 La evidencia acerca de los supuestos teóricos de la ley del efecto relativo no son consistentemente favorables (Dallery y Soto, 2004), en particular, en varios experimentos se reportan cambios en el parámetro $k$ cuando se dan cambios en la magnitud de refuerzo: es decir que no sólamente se redistribuye el número de respuestas asignado a las distintas opciones de comportamiento, sino que en efecto, el número total de respuestas que el organismo emite dentro de una cierta duración temporal incrementa. Estos resultados, acompañados del hecho de que la ecuación no se ha aplicado a los resultados obtenidos en programas de razón variable, han llevado a la derivación de la ecuación de ganancias decrecientes a partir de otros supuestos, tema que abordaremos en las siguientes notas.
 Podemos concluir que, sin duda, la ley del efecto relativo de Herrnstein no solo generó una gran cantidad de evidencia empírica, sino que  adicionalmente brindó las bases para la gran mayoría de los modelos de acción. Estas bases serán desarrolladas a detalle posteriormente, pero pueden resumirse en la siguiente lista:

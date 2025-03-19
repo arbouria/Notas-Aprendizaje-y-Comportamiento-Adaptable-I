@@ -84,36 +84,36 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
-  \renewcommand*\contentsname{Table of contents}
+  \renewcommand*\contentsname{Tabla de contenidos}
 \else
-  \newcommand\contentsname{Table of contents}
+  \newcommand\contentsname{Tabla de contenidos}
 \fi
 \ifdefined\listfigurename
-  \renewcommand*\listfigurename{List of Figures}
+  \renewcommand*\listfigurename{Listado de Figuras}
 \else
-  \newcommand\listfigurename{List of Figures}
+  \newcommand\listfigurename{Listado de Figuras}
 \fi
 \ifdefined\listtablename
-  \renewcommand*\listtablename{List of Tables}
+  \renewcommand*\listtablename{Listado de Tablas}
 \else
-  \newcommand\listtablename{List of Tables}
+  \newcommand\listtablename{Listado de Tablas}
 \fi
 \ifdefined\figurename
-  \renewcommand*\figurename{Figure}
+  \renewcommand*\figurename{Figura}
 \else
-  \newcommand\figurename{Figure}
+  \newcommand\figurename{Figura}
 \fi
 \ifdefined\tablename
-  \renewcommand*\tablename{Table}
+  \renewcommand*\tablename{Tabla}
 \else
-  \newcommand\tablename{Table}
+  \newcommand\tablename{Tabla}
 \fi
 }
 \@ifpackageloaded{float}{}{\usepackage{float}}
 \floatstyle{ruled}
 \@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
-\floatname{codelisting}{Listing}
-\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
 \makeatother
 \makeatletter
 \makeatother
@@ -121,6 +121,15 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -131,6 +140,7 @@
 \hypersetup{
   pdftitle={Notas de Aprendizaje y Comportamiento Adaptable},
   pdfauthor={Arturo Bouzas},
+  pdflang={es},
   colorlinks=true,
   linkcolor={Maroon},
   filecolor={Maroon},
@@ -146,7 +156,7 @@
 \frontmatter
 \maketitle
 
-\renewcommand*\contentsname{Table of contents}
+\renewcommand*\contentsname{Tabla de contenidos}
 {
 \hypersetup{linkcolor=}
 \setcounter{tocdepth}{2}
@@ -176,7 +186,10 @@ Arturo Bouzas.
 
 \bookmarksetup{startatroot}
 
-\chapter{Introducción}\label{introducciuxf3n}
+\chapter*{Introducción}\label{introducciuxf3n}
+\addcontentsline{toc}{chapter}{Introducción}
+
+\markboth{Introducción}{Introducción}
 
 La forma en que se organizan y presentan..
 
@@ -205,7 +218,7 @@ comportamiento de los organismos que habitan este planeta. La segunda,
 es que esta variabilidad parece estar finamente ajustada (adaptada) a
 las características del entorno que habitan los organismos.
 
-\subsubsection{1. Variabilidad}\label{variabilidad}
+\section{1. Variabilidad}\label{variabilidad}
 
 Un repaso de nuestra experiencia cotidiana, visitas a zoológicos y
 videos de historia natural en YouTube, nos alerta a la enorme variedad
@@ -255,7 +268,7 @@ variabilidad?, ¿cómo dar cuenta de ella y de su distribución en el
 espacio y en el tiempo? Fueron estas preguntas las que dieron origen a
 la noción de la evolución.
 
-\subsubsection{2. Adaptación}\label{adaptaciuxf3n}
+\section{2. Adaptación}\label{adaptaciuxf3n}
 
 Una segunda observación que requiere explicación, es el sorprendente
 ajuste (adaptación) de las características morfológicas, fisiológicas y
@@ -270,7 +283,7 @@ la isla que habitaban. Cómo puede verse en la siguiente figura, el pico
 podía ser largo y delgado, apropiado para acceder al néctar dentro de
 una flor, o corto y fuerte para poder romper y comer semillas.
 
-\subsection{3. Principios de la Selección
+\section{3. Principios de la Selección
 Natural}\label{principios-de-la-selecciuxf3n-natural-1}
 
 Tres principios se encuentran atrás de la propuesta de Darwin para dar
@@ -285,10 +298,10 @@ los rasgos. Si se satisfacen los tres principios que acabamos de
 describir, de generación a generación, el rasgo con mayor éxito
 reproductivo incrementará en frecuencia en la población.
 
-\subsection{4. Determinantes del éxito
+\section{4. Determinantes del éxito
 reproductivo}\label{determinantes-del-uxe9xito-reproductivo}
 
-\subsubsection{1. Filtros}\label{filtros}
+\subsection{1. Filtros}\label{filtros}
 
 Dada cierta variabilidad en un rasgo, la distribución estadística de las
 características del entorno es la que determina el éxito reproductivo
@@ -322,7 +335,7 @@ con el ejemplo anterior es que no contempla la creación de nuevos
 objetos. La selección natural necesita de un proceso que, de generación
 a generación, produzca nueva variabilidad.
 
-\subsubsection{2. Determinantes de la
+\subsection{2. Determinantes de la
 variabilidad}\label{determinantes-de-la-variabilidad}
 
 La variabilidad puede cambiar intrínsecamente, de generación en
@@ -356,7 +369,7 @@ rasgos diferentes. Dicho proceso inclusive puede derivar eventualmente
 en la generación de dos especies diferentes que ya no pueden
 reproducirse entre sí.
 
-\subsubsection{En resumen,}\label{en-resumen}
+\section{En resumen}\label{en-resumen}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -762,7 +775,7 @@ aprendizaje. Más adelante veremos que la historia es más compleja que
 este resumen, pero por el momento es suficiente que se tenga claridad
 sobre estos resultados.
 
-\subsection{¿Es la contigüidad una condición necesaria para el
+\section{¿Es la contigüidad una condición necesaria para el
 aprendizaje?}\label{es-la-contiguxfcidad-una-condiciuxf3n-necesaria-para-el-aprendizaje}
 
 Nos podemos preguntar si la contigüidad es el único sesgo que reduce el
@@ -859,7 +872,7 @@ dentro del proceso de asignación de crédito. 5. La contigüidad es uno de
 los sesgos, pero no constituye una condición necesaria para el
 aprendizaje.
 
-\subsection{¿Es la contigüidad una condición suficiente para el
+\section{¿Es la contigüidad una condición suficiente para el
 aprendizaje?}\label{es-la-contiguxfcidad-una-condiciuxf3n-suficiente-para-el-aprendizaje}
 
 A finales de los años 60s del siglo pasado, un grupo de investigadores,
@@ -872,7 +885,7 @@ biológicamente importante, el llamado estímulo incondicionado (EI). Un
 ejemplo de un compuesto de estímulos es la presentación simultánea de
 una luz y un tono, o la combinación de una figura visual y un color.
 
-\subsubsection{Ensombrecimiento}\label{ensombrecimiento}
+\subsection{Ensombrecimiento}\label{ensombrecimiento}
 
 Los sucesos que anteceden a un suceso biológicamente importante
 regularmente están compuestos de estímulos que varían en diferentes
@@ -912,7 +925,7 @@ crédito. A continuación, veremos una serie de experimentos que sugieren
 que una vez que se asignó el crédito a un elemento, los organismos dejan
 de considerar a otros elementos como candidatos.
 
-\subsubsection{Bloqueo}\label{bloqueo}
+\subsection{Bloqueo}\label{bloqueo}
 
 Imaginen que, después de un par de experiencias visitando restaurantes,
 ustedes aprenden que un mantel de tela es un buen predictor de la
@@ -1135,7 +1148,7 @@ alrededor del tiempo. En otro capítulo revisaremos en detalle otros
 resultados relacionados y su papel en una teoría general del
 comportamiento.
 
-\subsection{¿Es la contigüidad entre una respuesta y un refuerzo una
+\section{¿Es la contigüidad entre una respuesta y un refuerzo una
 condición necesaria para la adquisición de la
 respuesta?}\label{es-la-contiguxfcidad-entre-una-respuesta-y-un-refuerzo-una-condiciuxf3n-necesaria-para-la-adquisiciuxf3n-de-la-respuesta}
 
@@ -1219,7 +1232,7 @@ real de 10 segundos. En la Figura x, puede verse que aún eliminando la
 posibilidad de una contigüidad accidental, las palomas aprenden la
 respuesta de picar la tecla.
 
-\subsection{Percepción de la relación de causalidad respuesta -
+\section{Percepción de la relación de causalidad respuesta -
 refuerzo}\label{percepciuxf3n-de-la-relaciuxf3n-de-causalidad-respuesta---refuerzo}
 
 Los resultados que hemos reportado en este capítulo, nos llevan a
@@ -1284,7 +1297,7 @@ distancia entre la respuesta y el suceso accidental, existe una menor
 probabilidad de que el organismo le asigne poder causal a su respuesta
 para explicar la ocurrencia del evento accidental.
 
-\subsubsection{Conclusiones}\label{conclusiones}
+\section{Conclusiones}\label{conclusiones}
 
 De los experimentos presentados podemos alcanzar las siguientes
 conclusiones:
@@ -1504,7 +1517,7 @@ nuestro ejemplo hipotético, el obrero de la fábrica aprenderá acerca de
 la señal de 10 minutos que ocurre cada 4 horas, y no de la señal de 3
 horas y media de duración.
 
-Conclusiones
+\section{Conclusiones}\label{conclusiones-1}
 
 Adicionalmente a las limitaciones ya señaladas sobre el papel de la
 contigüidad en la selección de estímulos/respuestas candidato, cabe
@@ -1566,7 +1579,7 @@ sobre el papel de la contigüidad.
 
 .
 
-\subsection{Curvas de Aprendizaje}\label{curvas-de-aprendizaje}
+\section{Curvas de Aprendizaje}\label{curvas-de-aprendizaje}
 
 El aprendizaje es un proceso dinámico, que describe los cambios en el
 comportamiento como una función de la experiencia de los organismos.
@@ -1740,10 +1753,8 @@ Vx_{t+1} = Vx_t + R
 \end{enumerate}
 
 \[
-Vx_{t+1} = (1-a)Vx_t + aR_t
+Vx_{t+1} = (1-a)Vx_t + aR_t, \hspace{0.1cm} \text{ donde: } 0 < a < 1.
 \]
-
-donde: \(0 < a < 1\).
 
 La ecuación anterior es una ecuación recurrente, en la que en cada
 iteración (presentación del estímulo \(x\)) hay siempre un Vx viejo y un
@@ -1818,15 +1829,15 @@ Esta segunda forma de la ecuación, enfatiza la magnitud del cambio
 momento a momento, en lugar del valor del estímulo momento a momento.
 
 En cualquiera de las dos formas de presentar la ecuación del integrador,
-el valor V es una función de la diferencia entre el refuerzo obtenido y
-el valor del estímulo en el tiempo t. A esta diferencia dentro del
-paréntesis se le conoce como el error de predicción: la diferencia entre
-la R que se obtiene y lo que se esperaba obtener, V. Cuando esta
-diferencia es igual a cero, no habrá cambios en el valor de V. Es por
-esta forma de la ecuación que estamos llamando a V\_t el valor
-predictivo de la respuesta. El parámetro a, entre 0 y 1, sigue
-representando la velocidad del aprendizaje, en este caso, la importancia
-del error de predicción.
+el valor \(V\) es una función de la diferencia entre el refuerzo
+obtenido y el valor del estímulo en el tiempo \(t\). A esta diferencia
+dentro del paréntesis se le conoce como el error de predicción: la
+diferencia entre la \(R\) que se obtiene y lo que se esperaba obtener,
+\(V\). Cuando esta diferencia es igual a cero, no habrá cambios en el
+valor de \(V\). Es por esta forma de la ecuación que estamos llamando a
+\(V_t\) el valor predictivo de la respuesta. El parámetro \(a\), entre
+\(0\) y \(1\), sigue representando la velocidad del aprendizaje, en este
+caso, la importancia del error de predicción.
 
 En la literatura contemporánea, a la ecuación anterior se le conoce como
 regla delta.
@@ -1835,15 +1846,14 @@ regla delta.
 V_{t+1} = V_t + a \Delta Vx
 \]
 
-donde \(%
-\)delta = (lambda\_t - Vx\_t)\(%
-\) es el error de predicción, es decir, el motor del aprendizaje. Bajo
-el formato que enfatiza la magnitud del cambio, delta se incorpora a la
-ecuación de la siguiente forma:
+donde \(\delta = (\lambda_t - Vx_t)\) es el error de predicción, es
+decir, el motor del aprendizaje. Bajo el formato que enfatiza la
+magnitud del cambio, delta se incorpora a la ecuación de la siguiente
+forma:
 
-\(%
-\)∆Vx = a(delta)\(%
-\)
+\[
+\Delta Vx = a \delta
+\]
 
 \bookmarksetup{startatroot}
 
@@ -1874,8 +1884,7 @@ procesos atencionales que se suponían difíciles de evaluar con sujetos
 no humanos. Este modelo sigue siendo hasta la fecha el motor de la
 investigación en aprendizaje.
 
-\subsection{Modelo de Rescorla y
-Wagner}\label{modelo-de-rescorla-y-wagner}
+\section{Modelo de Rescorla y Wagner}\label{modelo-de-rescorla-y-wagner}
 
 El modelo de Rescorla y Wagner incluye dos grandes componentes. El
 primer componente es el \emph{Modelo de Refuerzo} de Bush y Mosteller,
@@ -1892,7 +1901,9 @@ El modelo de aprendizaje utilizado por Rescorla y Wagner es una variante
 del modelo de la reducción en el error de la predicción (también
 conocido como la regla delta).
 
-\[Vx_{t+1}= Vx_t + a (R_t -Vx_t)\] Donde 0 \textless{} a \textless1
+\[
+Vx_{t+1}= Vx_t + a (R_t - Vx_t), \text{  donde:  } 0<a<1.   
+\]
 
 Para entender el segundo componente del modelo de Rescorla y Wagner,
 consideremos por un momento las características del entorno modelado.
@@ -1967,7 +1978,9 @@ compuesto incluye dos estímulos A y B, se computan por separado VA y VB.
 La fuerza de la predicción del compuesto es la suma de los Vs es, en
 nuestro caso:
 
-Vtotal = VA+ VB.
+\[
+V_{total} = V_{A}+ V_{B}. 
+\]
 
 \subsubsection{La regla de la actualización del valor predictivo de los
 elementos.}\label{la-regla-de-la-actualizaciuxf3n-del-valor-predictivo-de-los-elementos.}
@@ -1978,14 +1991,16 @@ función de la discrepancia entre lo que se obtiene y lo que se espera
 obtener. La contribución de Rescorla y Wagner es suponer que lo que se
 espera obtener dada la presentación de un compuesto es el resultado de
 la suma del valor predictivo de todos los elementos presentes
-simultáneamente (V\_total).\_
+simultáneamente (\(V_{total}\)).
 
-Vx\_t+1 = Vx\_t + a(R-Vtotal\_t)\_
+\[
+Vx_{t+1} = Vx_t + a(R-V_{total_t})
+\]
 
 Recuerden que en nuestro protocolo, R es un valor binario que representa
-la presentación (R=1) o no (R=0) de un refuerzo. Como en la ecuación de
-Bush y Mosteler, \emph{a} es un parámetro de aprendizaje que determina
-la importancia del error de predicción.
+la presentación (\(R=1\)) o no (\(R=0\)) de un refuerzo. Como en la
+ecuación de Bush y Mosteler, \emph{a} es un parámetro de aprendizaje que
+determina la importancia del error de predicción.
 
 La ecuación especifica la reducción del error de predicción como motor
 del aprendizaje y, como puede verse en el simulador, este modelo produce
@@ -2004,15 +2019,19 @@ estímulo compuesto es limitado, lo que implica que mientras mayor sea el
 valor de uno de los elementos, quedará menos ``valor predictivo'' para
 ser distribuido a los demás elementos del compuesto.
 
-\subsubsection{La ecuación de Rescorla y
+\subsection{La ecuación de Rescorla y
 Wagner}\label{la-ecuaciuxf3n-de-rescorla-y-wagner}
 
-Vx\_\{t+1\} = Vx\_t + alphabeta(R-Vtotal\_t)
+\[
+Vx_{t+1} = Vx_t + \alpha \beta(R-V_{total_t})
+\]
 
 En ocasiones la ecuación de Rescorla y Wagner se representa en términos
 de los cambios de ensayo a ensayo.
 
-triangle Vx =Vx\_\{t+1\} - Vx\_t
+\[
+\Delta Vx =Vx_{t+1} - Vx_t
+\]
 
 Las preguntas que emergen al considerar este modelo son: primero, ¿de
 qué variables depende el parámetro ``a''? y segundo, ¿es ``a'' el único
@@ -2027,7 +2046,9 @@ aprendizaje que llamaremos beta, el cual también adquiere valores entre
 cero y uno y también se multiplica por el error de predicción para
 ponderar su importancia relativa.
 
-triangle Vx = alpha beta (R-Vtotal\_t)
+\[
+\Delta Vx = \alpha \beta (R-V_{total_t})
+\]
 
 Para ayudar a entender el modelo de Rescorla y Wagner en su aplicación a
 la vida cotidiana, consideren el siguiente escenario. Un amigo al que
@@ -2065,15 +2086,16 @@ estímulos (tono y luz) seguidos por el acceso a alimento. Para otros dos
 grupos solo se les presenta el tono o la luz, cada uno seguido de
 comida. Vamos a suponer que el tono y la luz no son igualmente
 sobresalientes (es decir, tienen betas diferentes). Para el grupo G1, el
-error de predicción es R menos la suma del valor adquirido en cada
-ensayo por los elementos del compuesto, para el cual: Vtotal = Vluz +
-VTono. Para los otros dos grupos, el error de predicción es R menos el
-valor de cada elemento por separado, VT o VL. En la simulación puede
-verse que cuando se tiene un tono ligeramente más sobresaliente que la
-luz en el grupo con el estímulo compuesto, ni el tono ni la luz alcanzan
-valores cercanos a R. En los grupos en los cuales los dos estímulos se
-presentan por separado, ambos estímulos alcanzan valores que se
-aproximan a 1, el valor de R.
+error de predicción es \(R\) menos la suma del valor adquirido en cada
+ensayo por los elementos del compuesto, para el cual:
+\(V_{total} =  V_{luz} + V_{Tono}\). Para los otros dos grupos, el error
+de predicción es R menos el valor de cada elemento por separado, \(V_T\)
+o \(V_L\). En la simulación puede verse que cuando se tiene un tono
+ligeramente más sobresaliente que la luz en el grupo con el estímulo
+compuesto, ni el tono ni la luz alcanzan valores cercanos a \(R\). En
+los grupos en los cuales los dos estímulos se presentan por separado,
+ambos estímulos alcanzan valores que se aproximan a \(1\), el valor de
+\(R\).
 
 imagen
 
@@ -2092,10 +2114,11 @@ valor (R - Vtono) es casi cero y el valor del tono VT es igual a R. En
 lenguaje menos técnico, el tono predice perfectamente la presentación de
 la comida.
 
-Para este grupo en la fase en el primer ensayo de esa fase Vtotal = VT +
-VL = (R + 0) y consecuentemente (R - Vtotal ) = (R - R +0) = 0 .
-Computando la actualización del valor de la luz: VL+1 = VL + a (R -
-Vtotal) = 0 + a (1 - 1) = 0
+Para este grupo en la fase en el primer ensayo de esa fase
+\(V_{total} = V_T + V_L = (R + 0)\) y consecuentemente
+\((R - V_{total}) =  (R - R +0) = 0\). Computando la actualización del
+valor de la luz:
+\(V_{L+1} = V_L + a (R - V_{total}) = 0 + a (1 - 1) = 0\).
 
 Vemos que no se le asigna valor al elemento luz. En resumen, cuando el
 elemento de un compuesto ya predice la presentación del refuerzo, el
@@ -2104,7 +2127,7 @@ puede verse en el resultado de la simulación presentada en la Figura x.
 
 imagen
 
-\subsubsection{Predicción contraintuitiva del modelo de Rescorla y
+\subsection{Predicción contraintuitiva del modelo de Rescorla y
 Wagner}\label{predicciuxf3n-contraintuitiva-del-modelo-de-rescorla-y-wagner}
 
 Cualquier versión del modelo de refuerzo predice que un refuerzo
@@ -2116,16 +2139,17 @@ seguido de comida durante 60 ensayos. En una segunda fase, una luz es el
 estímulo condicionado y es seguida de comida durante otros 60 ensayos.
 En la tercera fase, la final, a los sujetos experimentales se les
 presenta el compuesto tono-luz, seguido de comida durante 60 ensayos. Al
-inicio de la tercera fase, VL = R; VT = R y Vtotal = 2R, de tal forma
-que el error de predicción para ambos estímulos, será R - 2R, por lo que
-Vt+1 será un número negativo y veremos un decremento en el valor
-predictivo para los dos estímulos. Interesantemente, se ha encontrado
-evidencia empírica que respalda esta predicción contraintuitiva del
-modelo. La siguiente figura muestra el resultado de la simulación.
+inicio de la tercera fase, \(VL = R\); \(VT = R\) y \(V_{total} = 2R\),
+de tal forma que el error de predicción para ambos estímulos, será
+\(R - 2R\), por lo que \(V_{t+1}\) será un número negativo y veremos un
+decremento en el valor predictivo para los dos estímulos.
+Interesantemente, se ha encontrado evidencia empírica que respalda esta
+predicción contraintuitiva del modelo. La siguiente figura muestra el
+resultado de la simulación.
 
 imagen
 
-\subsubsection{Aplicación del modelo de Rescorla y Wagner a estudios de
+\subsection{Aplicación del modelo de Rescorla y Wagner a estudios de
 protocolos de
 correlaciones}\label{aplicaciuxf3n-del-modelo-de-rescorla-y-wagner-a-estudios-de-protocolos-de-correlaciones}
 
@@ -2155,7 +2179,7 @@ crédito al estímulo condicionado.
 
 Una forma de evaluar su comprensión del modelo de Rescorla y Wagner es
 considerar cuál sería su predicción para un experimento con protocolo no
-correlacionado (sin correlación entre el EC y R), en el cual los
+correlacionado (sin correlación entre el EC y \(R\)), en el cual los
 refuerzos que se presentan durante el intervalo entre ensayos son
 señalados con un tercer estímulo diferente al estímulo condicionado.
 ¿Qué cambios se pueden esperar en la asignación de crédito el estímulo
@@ -2189,13 +2213,13 @@ estos eventos? Imaginen que se encuentran con una persona paseando a un
 perro que los ignora completamente. Consideremos qué predice el modelo
 de refuerzo sobre lo que ustedes aprenderán acerca de esa persona. En
 este episodio, el perro no era un suceso biológicamente importante -ni
-les gruñó, ni les movió la cola- consecuentemente R es igual a cero.
-Adicionalmente, la persona era un desconocido que no predice nada, su V
-es por lo tanto igual a cero. De acuerdo al modelo de refuerzo, el
-cambio en el valor predictivo de la persona (Vx) es una función del
-error de predicción (R - Vx), en este caso (0 - 0) y por lo tanto no
-habría tampoco ningún cambio en Vx. En otras palabras, si dado un
-estímulo, nada se espera y nada se obtiene, ese estímulo no predice
+les gruñó, ni les movió la cola- consecuentemente \(R\) es igual a cero.
+Adicionalmente, la persona era un desconocido que no predice nada, su
+\(V\) es por lo tanto igual a cero. De acuerdo al modelo de refuerzo, el
+cambio en el valor predictivo de la persona (\(Vx\)) es una función del
+error de predicción (\(R - Vx\)), en este caso (\(0 - 0\)) y por lo
+tanto no habría tampoco ningún cambio en Vx. En otras palabras, si dado
+un estímulo, nada se espera y nada se obtiene, ese estímulo no predice
 nada.
 
 A diferencia del modelo de refuerzo tradicional, el modelo de Rescorla y
@@ -2212,8 +2236,8 @@ perro se convierte en un inhibidor condicionado, el cual predice la no
 ocurrencia del gruñido del perro. Recordando que en la ausencia de un
 refuerzo, R es igual a cero, el error de predicción es negativo sólo si
 el estímulo neutro aparece en compuesto con un estímulo con valor
-positivo. De esa forma V total \textgreater{} 0 y el error de predicción
-(R - V total ) \textless{} 0.
+positivo. De esa forma \(V_{total} > 0\) y el error de predicción
+\((R - V_{total}) < 0\).
 
 En conclusión, de acuerdo a Rescorla y Wagner, un estímulo/ respuesta se
 convierte en un inhibidor condicionado, solo si hay un error de
@@ -2228,24 +2252,24 @@ un punto de partida. En 1969, propuso dos protocolos necesarios para
 argumentar y sostener que un estímulo era un inhibidor condicionado.
 
 En un primer protocolo, conocido como de \emph{sumación}, se compara,
-por un lado, la respuesta a un estímulo condicionado A con valor
+por un lado, la respuesta a un estímulo condicionado \(A\) con valor
 positivo presentado individualmente; con, por otra parte, la respuesta
-ante un compuesto del estímulo A acompañado de un estímulo X. Nuestro
-objetivo es determinar si X es un inhibidor condicionado. Si la
-respuesta al compuesto AX es menor u opuesta a la respuesta observada
-ante el estímulo A presentado individualmente, podríamos concluir que el
-estímulo X es un inhibidor condicionado. Regresando a nuestro ejemplo,
-podemos argumentar que la pareja del paseador de perro es un inhibidor
-condicionado, si el perro no gruñe cuando la pareja acompaña al paseador
-y sí gruñe cuando este va acompañado únicamente de su paseador. Sin
-embargo, Rescorla señala que estos resultados tienen una segunda
-interpretación: es posible que la atención dirigida al estímulo X (la
-pareja) reduzca la atención dirigida al estímulo A (el paseador)
-resultando en la menor respuesta al perro. En resumen, X no sería un
-predictor de la ausencia de gruñido (no sería un inhibidor
-condicionado), simplemente, X contribuiría a que se ignore a A. Las
-siguientes dos figuras muestran el protocolo de sumación y el resultado
-de una simulación.
+ante un compuesto del estímulo \(A\) acompañado de un estímulo \(X\).
+Nuestro objetivo es determinar si \(X\) es un inhibidor condicionado. Si
+la respuesta al compuesto \(AX\) es menor u opuesta a la respuesta
+observada ante el estímulo \(A\) presentado individualmente, podríamos
+concluir que el estímulo \(X\) es un inhibidor condicionado. Regresando
+a nuestro ejemplo, podemos argumentar que la pareja del paseador de
+perro es un inhibidor condicionado, si el perro no gruñe cuando la
+pareja acompaña al paseador y sí gruñe cuando este va acompañado
+únicamente de su paseador. Sin embargo, Rescorla señala que estos
+resultados tienen una segunda interpretación: es posible que la atención
+dirigida al estímulo \(X\) (la pareja) reduzca la atención dirigida al
+estímulo \(A\) (el paseador) resultando en la menor respuesta al perro.
+En resumen, \(X\) no sería un predictor de la ausencia de gruñido (no
+sería un inhibidor condicionado), simplemente, \(X\) contribuiría a que
+se ignore a \(A\). Las siguientes dos figuras muestran el protocolo de
+sumación y el resultado de una simulación.
 
 IMAGENES
 
@@ -2254,34 +2278,34 @@ protocolo de sumación en términos de atención se requiere de una prueba
 adicional. A esta se le conoce como \emph{prueba de retardo} y consiste
 en comparar la curva de adquisición de valor predictivo de un estímulo
 neutral A presentado individualmente, con la presentación -también
-individual- de un estímulo X que se entrenó como un inhibitorio y que
-tiene un valor negativo. Si el aprendizaje es más lento para el segundo
-estímulo X, podríamos concluir que este se trata de un estímulo
-inhibitorio. La figura x muestra los resultados de la simulación con
-este protocolo.
+individual- de un estímulo \(X\) que se entrenó como un inhibitorio y
+que tiene un valor negativo. Si el aprendizaje es más lento para el
+segundo estímulo \(X\), podríamos concluir que este se trata de un
+estímulo inhibitorio. La figura x muestra los resultados de la
+simulación con este protocolo.
 
 IMAGEN
 
 Sin embargo, otra posible explicación de los resultados de la prueba de
 retardo hace también referencia a procesos de atención. Es posible que
-por el entrenamiento previo, el estímulo X deje de activar los procesos
-de atención y que por lo tanto la demora en el aprendizaje de su valor
-predictivo se deba a la falta de atención que este recibe en comparación
-con la atención que recibe el estímulo novedoso neutral. Sin embargo,
-noten que en el protocolo de sumación, la explicación alternativa para
-dar cuenta de una menor respuesta del organismo ante el estímulo
-compuesto (X+EC) era una mayor atención otorgada al estímulo X, el cual
-desviaba la atención del estímulo EC; mientras tanto, en el protocolo de
-retardo, la explicación alternativa para dar cuenta de la menor
-respuesta ante el estímulo X es una menor atención asignada al estímulo
-X debido a la familiaridad con este estímulo. Por lo tanto, Rescorla
-propone que para concluir que un estímulo/respuesta es un inhibidor,
-este debe pasar tanto la prueba de sumación como la de retardo. No
-resulta plausible que un estimulo reciba menos atención en una
-circunstancia y el mismo reciba mayor atención en la otra circunstancia:
-por lo cual, si el estímulo actúa como inhibidor en ambas
-circunstancias, esto significa que su efecto no se debe a meros procesos
-atencionales de novedad/habituación, sino que efectivamente, el
+por el entrenamiento previo, el estímulo \(X\) deje de activar los
+procesos de atención y que por lo tanto la demora en el aprendizaje de
+su valor predictivo se deba a la falta de atención que este recibe en
+comparación con la atención que recibe el estímulo novedoso neutral. Sin
+embargo, noten que en el protocolo de sumación, la explicación
+alternativa para dar cuenta de una menor respuesta del organismo ante el
+estímulo compuesto (\(X+EC\)) era una mayor atención otorgada al
+estímulo \(X\), el cual desviaba la atención del estímulo EC; mientras
+tanto, en el protocolo de retardo, la explicación alternativa para dar
+cuenta de la menor respuesta ante el estímulo \(X\) es una menor
+atención asignada al estímulo \(X\) debido a la familiaridad con este
+estímulo. Por lo tanto, Rescorla propone que para concluir que un
+estímulo/respuesta es un inhibidor, este debe pasar tanto la prueba de
+sumación como la de retardo. No resulta plausible que un estimulo reciba
+menos atención en una circunstancia y el mismo reciba mayor atención en
+la otra circunstancia: por lo cual, si el estímulo actúa como inhibidor
+en ambas circunstancias, esto significa que su efecto no se debe a meros
+procesos atencionales de novedad/habituación, sino que efectivamente, el
 organismo considera a este estímulo como un predictor de la ausencia de
 un SBI. En otras palabras, dado que la variable de atención tiene
 efectos contrarios en las dos pruebas: al encontrar un estímulo que pasa
@@ -2303,17 +2327,17 @@ otro capítulo. A continuación presentamos dos de las predicciones
 erróneas. Seleccionamos estas por su fácil comprensión y por ser las que
 han dado lugar a modelos alternativos.
 
-\subsubsection{Supuesto de que la extinción reduce el valor de un
+\paragraph{Supuesto de que la extinción reduce el valor de un
 estímulo/respuesta a
 cero}\label{supuesto-de-que-la-extinciuxf3n-reduce-el-valor-de-un-estuxedmulorespuesta-a-cero}
 
 En extinción, el refuerzo que previamente seguía a un estímulo o
-respuesta deja de presentarse. En este caso R cambia de un valor de 1 a
-0. El modelo asume que no habrá un error de predicción cuando el valor
-del estímulo sea igual a R, esto es, cuando el valor del estímulo sea
-también cero. Consecuentemente, para Rescorla y Wagner, el impacto de un
-estímulo que fue extinguido, debe ser el mismo que el de un estímulo
-neutral dado que para ambos estímulos V = 0.
+respuesta deja de presentarse. En este caso \(R\) cambia de un valor de
+\(1\) a \(0\). El modelo asume que no habrá un error de predicción
+cuando el valor del estímulo sea igual a \(R\), esto es, cuando el valor
+del estímulo sea también cero. Consecuentemente, para Rescorla y Wagner,
+el impacto de un estímulo que fue extinguido, debe ser el mismo que el
+de un estímulo neutral dado que para ambos estímulos \(V = 0\).
 
 Sin embargo, hay una multitud de reportes que señalan que el mero paso
 del tiempo produce una recuperación espontánea del efecto que
@@ -2324,7 +2348,7 @@ neutrales, a pesar de que se supone que ambos inician con un valor igual
 a cero. Esta literatura y los modelos para dar cuenta de ella la
 presentamos en el capítulo sobre extinción.
 
-\subsection{Inhibición latente}\label{inhibiciuxf3n-latente}
+\subsubsection{Inhibición latente}\label{inhibiciuxf3n-latente}
 
 Consideremos el siguiente protocolo experimental. En una primera fase, a
 un grupo se le presenta, durante 60 ensayos, un estímulo neutral que no
@@ -2421,11 +2445,17 @@ Respuesta}\label{relaciuxf3n-entre-tasas-absolutas-y-relativas-de-respuesta}
 
 Para Herrnstein (1970) fue claro que cualquier función que relacione la
 tasa de respuesta (como valor de salida) a la tasa de refuerzo (como
-valor de entrada) debe satisfacer dos condiciones: * primero, dar cuenta
-de la relación obtenida en los programas de intervalo variable cuando
-hay una sola opción de respuesta disponible para el organismo y *
-segundo, ser consistente con la ley de igualación, cuando hay dos o más
-opciones de respuesta para el organismo.
+valor de entrada) debe satisfacer dos condiciones:
+
+\begin{itemize}
+\item
+  primero, dar cuenta de la relación obtenida en los programas de
+  intervalo variable cuando hay una sola opción de respuesta disponible
+  para el organismo y
+\item
+  segundo, ser consistente con la ley de igualación, cuando hay dos o
+  más opciones de respuesta para el organismo.
+\end{itemize}
 
 Recordemos que para los modelos de refuerzo, los animales no llevan un
 registro de la frecuencia relativa con la que deben emitir cada
@@ -2526,13 +2556,13 @@ Para determinar si esta primera función es consistente con la ley de
 igualación, insertamos la función en la computación de tasas relativas
 de respuesta. Asumiendo que el refuerzo es el mismo para las dos
 opciones, el parámetro \textbf{k} se cancela y obtenemos la ecuación de
-igualación.
-
-\[\frac {R_1} {(R_1 + R_2)} = \frac {kr_1} {(kr_1 + kr_2)}\]
+igualación. \[
+\frac{R_1}{(R_1 + R_2)} = \frac{kr_1}{(kr_1 + kr_2)}
+\]
 
 La función que postula proporcionalidad entre respuestas y refuerzos es
 consistente con los resultados presentados en la Fig x. Sin embargo, la
-función \[R_i = kr_i\] propone que la tasa de una respuesta depende
+función \(R_i = kr_i\) propone que la tasa de una respuesta depende
 únicamente del refuerzo que ésta produce. Por lo tanto, la tasa de una
 respuesta no debería de cambiar cuando su refuerzo es constante y tan
 solo se manipula otra fuente de refuerzo. Sin embargo, en el panel
@@ -2544,7 +2574,9 @@ conductual}.
 La siguiente es una segunda función de respuesta, consistente con el muy
 replicado resultado de contraste conductual:
 
-\[R_1 = \frac {kr_1} {(r_1 + r_2)}\]
+\[
+R_1 = \frac {kr_1} {(r_1 + r_2)}
+\]
 
 La función nos dice que la tasa de una respuesta es una función de la
 tasa relativa de refuerzo que recibe esta respuesta. Como puede verse en
@@ -2567,16 +2599,21 @@ experimentos en los que solo se refuerza una de las respuestas, como es
 el caso de los datos del experimento de Catania y Reynolds. En la
 ecuación:
 
-\[R_1 = \frac {kr_1} {(r_1 + r_2)}\]
+\[
+R_1 = \frac{kr_1}{(r_1 + r_2)}
+\]
 
-el valor de \(r_2\) es cero, pues solo hay una respuesta (r\_1) y la
+el valor de \(r_2\) es cero, pues solo hay una respuesta (\(r_1\)) y la
 ecuación se reduce a
 
-\[R_1 = \frac {kr_1} {r_1 }\]
+\[
+R_1 = \frac {kr_1} {r_1 }
+\]
 
-Por lo tanto, terminamos con la función:
-
-\[R_1 = k\]
+Por lo tanto, terminamos con la función:\\
+\[
+R_1 = k
+\]
 
 la cual nos dice que la tasa de respuesta es una constante y que por
 ende, la respuesta es insensible a la tasa de refuerzo. Sin embargo,
@@ -2590,8 +2627,7 @@ de igual manera, la tasa de respuesta TAMPOCO es una constante
 insensible a variaciones en la tasa de refuerzo, contrario a lo que
 sugiere la segunda función de refuerzo.
 
-\subsection{La ley del Efecto
-Relativa}\label{la-ley-del-efecto-relativa}
+\section{La ley del Efecto Relativa}\label{la-ley-del-efecto-relativa}
 
 En un artículo publicado en 1970, Herrnstein propuso una versión de la
 ley del efecto que simultáneamente daba cuenta de dos de las
@@ -2633,13 +2669,21 @@ La propuesta descansa en tres supuestos:
   refuerzo de todas las respuestas en una situación experimental.
 \end{enumerate}
 
-\[\frac{R_1}{R_1 + R_0}= \frac {r_1} {(r_1 + r_o)}\]
+\[
+\frac{R_1}{R_1 + R_0}= \frac {r_1} {(r_1 + r_o)}
+\]
 
-\[R_1+R_0 = k\]
+\[
+R_1+R_0 = k
+\]
 
-\[\frac{R_1}{k}= \frac {r_1} {(r_1 + r_o)}\]
+\[
+\frac{R_1}{k}= \frac {r_1} {(r_1 + r_o)}
+\]
 
-\[R_1= \frac{kr_1} {(r_1 + r_o)}\]
+\[
+R_1= \frac{kr_1} {(r_1 + r_o)}
+\]
 
 Recordemos que \(k\) es un parámetro que se estima estadísticamente y
 representa la suma de todos los comportamientos medida en unidades
@@ -2661,10 +2705,10 @@ que relaciona la tasa de respuesta a la tasa de refuerzo cuando se varía
 el valor de \(r_o\) dentro de programas de intervalo variable. En
 general, estos modelos exponen cómo el número de refuerzos por unidad de
 tiempo generados por una respuesta (dentro de un programa de intervalo
-variable X) influye sobre la tasa con la que el organismo emite esa
+variable \(X\)) influye sobre la tasa con la que el organismo emite esa
 respuesta; al mismo tiempo, la tasa de refuerzo que generan las
-respuestas no controladas (R\_o) influye sobre la tasa relativa de la
-respuesta evaluada (R\_1).
+respuestas no controladas (\(R_o\)) influye sobre la tasa relativa de la
+respuesta evaluada (\(R_1\)).
 
 \begin{itemize}
 \item
@@ -2728,7 +2772,7 @@ conducta. En lugar de simplemente eliminar o castigar conductas
 indeseables, se busca promover alternativas deseables y modificar el
 contexto de refuerzo para influir en las elecciones del individuo.
 
-\subsection{Evaluación}\label{evaluaciuxf3n}
+\subsubsection{Evaluación}\label{evaluaciuxf3n}
 
 Empíricamente, la ley del efecto relativo de Herrnstein es enormemente
 exitosa en su descripción de la relación entre tasa de respuesta y la
@@ -2756,9 +2800,11 @@ Las siguientes son algunas de las predicciones teóricas del modelo:
   deben ser capturadas por cambios en \(r_o\).
 \item
   Agregar otra fuente de refuerzo debe reducir el valor del parámetro
-  \(r_o\). \#\#\# Quedamos de elaborar más/ejemplificar estos últimos
-  puntos..
+  \(r_o\).
 \end{itemize}
+
+\textbf{\emph{Quedamos de elaborar más/ejemplificar estos últimos
+puntos.. }}
 
 La evidencia acerca de los supuestos teóricos de la ley del efecto
 relativo no son consistentemente favorables (Dallery y Soto, 2004), en
@@ -2839,7 +2885,7 @@ instantáneamente tiene más valor no es la que a largo plazo proporciona
 la mayor cantidad de refuerzos. En los experimentos con estos protocolos
 observamos una regla de respuesta probabilística.
 
-\subsection{Elección Recurrente}\label{elecciuxf3n-recurrente}
+\section{Elección Recurrente}\label{elecciuxf3n-recurrente}
 
 Fuera del laboratorio, lo común para los humanos y para muchas otras
 especies son situaciones en las cuales los individuos pueden elegir
@@ -2901,7 +2947,7 @@ días. Esta rutina se repite para todos los pares de programas que se
 están estudiando. De cada par, se usan para el análisis los últimos
 cinco días en los que las elecciones son estables.
 
-\subsection{La Ley de Igualación}\label{la-ley-de-igualaciuxf3n}
+\section{La Ley de Igualación}\label{la-ley-de-igualaciuxf3n}
 
 En 1961, Richard Herrnstein (ver foto)
 
@@ -2960,7 +3006,7 @@ lugar.
 \frac {T_1} {(T_1 + T_2)} = \frac {r_1} {(r_1 + r_2)}
 \]
 
-\section{Desviaciones de
+\subsection{Desviaciones de
 Igualación}\label{desviaciones-de-igualaciuxf3n}
 
 La igualación de las tasas relativas de respuesta al valor de las tasas
@@ -3167,7 +3213,7 @@ que representa la solución observada, en equilibrio, a la multiplicidad
 de formas de maximizar el refuerzo total en programas concurrentes de
 intervalo variable.
 
-\subsection{¿Es Maximización el Mecanismo que Subyace a
+\subsubsection{¿Es Maximización el Mecanismo que Subyace a
 Igualación?}\label{es-maximizaciuxf3n-el-mecanismo-que-subyace-a-igualaciuxf3n}
 
 Una pregunta muy diferente a la de si la igualación es un comportamiento
@@ -3200,7 +3246,7 @@ notas x, la tasa relativa de respuesta se mueve en la dirección de una
 mayor tasa global de refuerzo hasta alcanzar un máximo, el cual puede
 ser local.
 
-\subsection{Igualación y Rentabilidad de las
+\subsubsection{Igualación y Rentabilidad de las
 Respuestas}\label{igualaciuxf3n-y-rentabilidad-de-las-respuestas}
 
 Otra explicación que puede dar cuenta del patrón de respuesta de
@@ -3287,7 +3333,7 @@ computar las tasas locales de refuerzo.
 
 Aqui falta el ejemplo numerico.
 
-\subsection{Maximización vs
+\subsubsection{Maximización vs
 Rentabilidad}\label{maximizaciuxf3n-vs-rentabilidad}
 
 ¿Es posible distinguir entre estas dos interpretaciones de la elección
@@ -3537,11 +3583,15 @@ rentabilidad de las opciones. Esta variable se computa dividiendo el
 número de refuerzos para cada opción entre el tiempo asignado a cada una
 de ellas:
 
-\[\frac {r_i}{T_i}\]
+\[
+\frac {r_i}{T_i}
+\]
 
 La rentabilidad puede computarse también para respuestas:
 
-\[\frac {r_i}{R_i}\]
+\[
+\frac {r_i}{R_i}
+\]
 
 Asumiendo un tiempo total fijo, de acuerdo al modelo de mejoramiento,
 cada incremento en una unidad de tiempo asignada a una opción tiene como
@@ -3711,8 +3761,8 @@ sesión (formalmente a este arreglo se le conoce como programas múltiples
 de refuerzo). Una vez alcanzado el equilibrio en cada programa
 concurrente IV - IV: se presenta una nueva combinación de las opciones
 comunes a ambos programas. De acuerdo a los modelos de refuerzo, de
-mejoramiento y de valor Q, la elección en los periodos de prueba debe
-reflejar los valores adquiridos por cada opción individual.
+mejoramiento y de valor \(Q\), la elección en los periodos de prueba
+debe reflejar los valores adquiridos por cada opción individual.
 
 Belke () corrió una versión de este protocolo. Para uno de los
 componentes de programas concurrentes (Componente A), los valores de las

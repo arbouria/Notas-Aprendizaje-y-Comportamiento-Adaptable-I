@@ -32,7 +32,7 @@ La sencilla historia anterior fue rápidamente cuestionada en una réplica del e
 
 De los resultados del experimento de Staddon y Simmelhag pueden extraerse dos conclusiones, una negativa y otra positiva. Primero, en relación al tema de este capítulo, podemos concluir que en los experimentos en los que no existe una relación netamente causal entre respuesta y SBI, el estímulo no selecciona a la respuesta que accidentalmente le antecede: contradiciendo a la idea que la contigüidad es una condición suficiente para el aprendizaje de respuestas. La conclusión positiva es que la mera presentación de un SBI induce un conjunto tipificado de respuestas, y que la periodicidad de la presentación del SBI organiza el comportamiento de los organismos alrededor del tiempo. En otro capítulo revisaremos en detalle otros resultados relacionados y su papel en una teoría general del comportamiento.
 
-### ¿Es la contigüidad entre una respuesta y un refuerzo una condición necesaria para la adquisición de la respuesta?
+## ¿Es la contigüidad entre una respuesta y un refuerzo una condición necesaria para la adquisición de la respuesta?
 
 En el experimento de superstición de Skinner no había una relación de dependencia causal entre respuesta y refuerzo y Skinner buscaba demostrar que la mera contigüidad era suficiente para el aprendizaje de respuestas. Pero esta demostración dependía de la manera en la que se especifica el concepto de contigüidad en términos concretos (¿cuándo podemos considerar que un suceso es realmente contiguo? Si el SBI ocurre un segundo antes del EC o dos segundos antes, ¿sigue siendo contiguo?¿cuándo comienza y cuándo termina la contigüidad?). Para poder estudiar sistemáticamente el papel de la contigüidad, es necesario especificar la ventana temporal que define a dos eventos como contiguos. La estrategia teórica-experimental inicial en esta área fue considerar como contigüidad una ventana de cero segundos y considerar el impacto de ventanas mayores como distintas instancias de efectos de la demora en el refuerzo.
 
@@ -42,7 +42,7 @@ En un primer experimento, Dickinson y sus colaboradores evaluaron el impacto de 
 
 Como ya se mencionó, un problema a resolver para  el experimento anterior era controlar la posibilidad de que los organismos aprendieran respuestas que aparecieran accidentalmente contiguas al SBI. Lattal y Gleeson realizaron un experimento con una ingeniosa estrategia alterna para controlar esta posibilidad. En su experimento, la respuesta de las palomas de picar una tecla detonaba una demora de 10 seg. después de la cual obtenían un refuerzo de comida; sin embargo, esto último sólo ocurría si las palomas no daban ninguna respuesta durante el periodo de demora. De esta forma, el diseño experimental garantizaba una demora real de 10 segundos. En la Figura x, puede verse que aún eliminando la posibilidad de una contigüidad accidental, las palomas aprenden la respuesta de picar la tecla.
 
-### Percepción de la relación de causalidad respuesta - refuerzo
+## Percepción de la relación de causalidad respuesta - refuerzo
 
 Los resultados que hemos reportado en este capítulo, nos llevan a considerar la siguiente pregunta: ¿Pueden los organismos discriminar entre refuerzos producidos por su comportamiento de aquellos que son independientes de él?
 
@@ -52,7 +52,7 @@ Como veremos en la práctica sobre “teoría de detección de señales”, cuan
 
 ¿Qué papel juega el tiempo transcurrido entre una respuesta y el encuentro con un refuerzo independiente? ¿Si ha transcurrido un tiempo largo entre una respuesta del organismo y un evento accidental, este todavía le asignará poder causal a su respuesta para dar cuenta de la ocurrencia del evento? En el mismo experimento, Killeen se preguntó acerca del efecto del tiempo transcurrido entre una respuesta y el apagado de la luz generado por la computadora sobre la probabilidad de una falsa alarma. Encontró que las falsas alarmas se reducen conforme ese tiempo se mueve de 0.20 seg. a 1.0 seg. Ver fig. Es decir, a mayor distancia entre la respuesta y el suceso accidental, existe una menor probabilidad de que el organismo le asigne poder causal a su respuesta para explicar la ocurrencia del evento accidental.
 
-#### Conclusiones
+## Conclusiones
 
 De los experimentos presentados podemos alcanzar las siguientes conclusiones:
 
