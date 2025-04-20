@@ -8,7 +8,6 @@ book:
   repo-url: https://github.com/arbouria/Notas-Aprendizaje-y-Comportamiento-Adaptable-I
   date: "3/15/2025"
   repo-actions: [edit]
-  downloads: pdf
   sharing: [twitter, facebook]
 
   search:
@@ -36,7 +35,6 @@ book:
 
   chapters:
       - index.qmd
-      - intro.qmd
       - Capítulo 1.qmd
       - Capítulo 2.qmd 
       - Capítulo 3.qmd
@@ -71,12 +69,3 @@ format:
       theme: 
           light: [cerulean, theme-light.scss]
           dark: [cerulean, theme-dark.scss]
-
-    pdf: 
-      title: "Notas de Aprendizaje y Comportamiento Adaptable"
-      pdf-engine: xelatex
-      documentclass: book
-      lang: es
-      toc: true
-      colorlinks: true
-      keep-tex: true
